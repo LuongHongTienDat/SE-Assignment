@@ -3,14 +3,14 @@ const mongoose = require('mongoose');
 
 async function connect(){
     try {
-        await mongoose.connect('mongodb://127.0.0.1:27017/restaurant',{
+        await mongoose.connect(process.env.MONGO_STRING,{
             useNewUrlParser : true,
             useUnifiedTopology : true,
         });
         console.log('successfully connected');
     }
     catch (error) {
-        console.log('fail');
+        console.log('fail to connect to database');
     }
 }
 
