@@ -60,7 +60,12 @@ const dishModel = new Schema({
         type: Number,
         required: true,
         default: 0
-    }
+    },
+    isBestSeller:{
+        type: Boolean,
+        required: true,
+        default: false
+    }   
 }, {
     timestamps: true,
 })

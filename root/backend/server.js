@@ -24,6 +24,8 @@ app.get("/", (req, res) => {
   res.send("Successfully running !");
 });
 
+// Route 
+routes(app);
 
 app.listen(port, () => {
     console.log(`App listening at port: ${port}`)
