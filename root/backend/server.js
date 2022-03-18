@@ -1,6 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
-
+const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
 const db = require('./config/db');
@@ -19,6 +19,12 @@ if (process.env.NODE_ENV === "development") {
 
 // To recognize the incoming Request Object as a JSON Object
 app.use(express.json());
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 app.get("/", (req, res) => {
   res.send("Successfully running !");

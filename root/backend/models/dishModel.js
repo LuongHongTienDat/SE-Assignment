@@ -31,6 +31,11 @@ const dishModel = new Schema({
         required: true, 
         default: ""
     },
+    price:{
+        type: Number,
+        required: true, 
+        default: 0
+    },    
     countRating:{
         type: Number,
         required: true, 
