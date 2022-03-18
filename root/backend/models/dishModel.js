@@ -26,6 +26,11 @@ const dishModel = new Schema({
         required: true,
         ref: "Category"
     },
+    dishDescription:{
+        type: String,
+        required: true, 
+        default: ""
+    },
     dishDetails:{
         type: String,
         required: true, 
@@ -55,11 +60,6 @@ const dishModel = new Schema({
         type: [reviewModel],
         required: true, 
         default: []
-    },
-    dishDetails:{
-        type: String,
-        required: true, 
-        default: ""
     },
     countInStock:{
         type: Number,

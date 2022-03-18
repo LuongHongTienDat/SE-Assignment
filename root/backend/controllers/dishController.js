@@ -39,7 +39,7 @@ class DishController {
         }
     }
 
-//  [ POST - ROUTE: / (updated soon) ]
+//  [ POST - ROUTE: api/dish/create ]
     async createDish(req,res){
         const { name, category, dishDetails, image, price, countInStock } = req.body;
         const newDish = await Dish.create({
