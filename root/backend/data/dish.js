@@ -290,7 +290,7 @@ const dish =[
     {
         id:19,
         name:'Pizza',
-        image:'https://www.seekpng.com/png/full/1-16481_pizza-png-photo.png',
+        image:'https://clipart-best.com/img/pizza/pizza-clip-art-48.png',
         category:'fastfood',
         dishDetails:'Nhiều loại nguyên liệu khác nhau tạo thành nhiều màu sắc hấp dẫn.',
         price:'199.000',
