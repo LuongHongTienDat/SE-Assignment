@@ -178,7 +178,7 @@ const dish =[
     {
         id:12,
         name:'Vodka',
-        image:'https://product.hstatic.net/1000206480/product/sup_la_cam_d831f3ab2d9d49d78eb350b252c1aa23_1024x1024.png',
+        image:'http://bizweb.dktcdn.net/thumb/grande/100/036/299/products/smirnoff-vodka-red-700ml.png?v=1643270887690',
         category:'drinks',
         dishDetails:'Rượu hảo hạng đến từ Nga, buổi tiệc thêm vui',
         price:'199.000',
