@@ -4,8 +4,46 @@ const bcrypt = require ("bcryptjs");
 
 class UserController {
 
-//  [ POST - ROUTE:  ]
+ //  [ POST - ROUTE: api/user/create ]
+ async registerUser(req,res){
+    const {name, userName, password, phoneNumber, gender, email} = req.body;
+    console.log(req.body);
+    const user = await User.findOne({ $or:[ {email}, {userName} ]});
+    if (!user){
+        var salt = await bcrypt.genSalt(10);
+        var hashPassword = await  bcrypt.hash(password,salt);
+        const newUser = await User.create({
+            name,
+            email,
+            userName,
+            phoneNumber,
+            gender,
+            password: hashPassword,
+            roleUser: "Customer"
+        });
+        if (newUser){
+            res.json({
+                name,
+                email,
+                userName,
+                phoneNumber,
+                gender,
+                newUser: newUser.roleUser,              
+            });
+        }
+        else {
+            res.status(501);
+            throw new Error('Fail to resister new user!');          
+        }
+    }
+    else {
+            res.status(404);
+            throw new Error('User has already existed!');
+    }
+    
+}
 
+//  [ POST - ROUTE:  ]
     async authUser(req,res){
         const {userName , password} = req.body;
         const user = await User.findOne({userName});
@@ -26,10 +64,6 @@ class UserController {
         }
     }
 
-//  [ POST - ROUTE:  ]
-    async registerUser(req,res){
-
-    }
 
  //  [ GET - ROUTE:  ]
     async getUserProfile(req,res){
@@ -52,7 +86,8 @@ class UserController {
     }
 
  //  [PATCH - ROUTE:  ]  
-    async updateUserProfile(req,res){
+    async updateUser(req,res){
+        console.log(req.params.id);
         var user = await User.findById(req.params.id);
         if (user){
             if(req.body.password) {
@@ -68,7 +103,7 @@ class UserController {
                 gender : req.body.gender || user.gender,
                 roleUser : req.body.roleUser || user.roleUser,
                 password : hashPassword,
-                token: generateToken(updateUser._id),
+                token: generateToken(user._id),
                 },
                 {
                     new : true
