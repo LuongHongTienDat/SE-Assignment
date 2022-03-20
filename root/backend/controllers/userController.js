@@ -1,10 +1,14 @@
 const User = require('../models/userModel');
-const generateToken = require("../utils/generateToken.js");
+const generateToken = require("../utils/generateToken");
 const bcrypt = require ("bcryptjs");
+const crypto = require ("crypto");
+
+const Token = require('../models/resetTokenModel');
+const sendEmail = require("../utils/sendEmail");
 
 class UserController {
 
- //  [ POST - ROUTE: api/user/create ]
+ //  [ POST - ROUTE: api/user/register ]
  async registerUser(req,res){
     const {name, userName, password, phoneNumber, gender, email} = req.body;
     console.log(req.body);
@@ -43,7 +47,7 @@ class UserController {
     
 }
 
-//  [ POST - ROUTE:  ]
+//  [ POST - ROUTE: api/user/auth ]
     async authUser(req,res){
         const {userName , password} = req.body;
         const user = await User.findOne({userName});
@@ -65,7 +69,7 @@ class UserController {
     }
 
 
- //  [ GET - ROUTE:  ]
+ //  [ GET - ROUTE: api/user/:id ]
     async getUserProfile(req,res){
         var user = await User.findById(req.params.id);
         if(user){
@@ -85,7 +89,7 @@ class UserController {
         }
     }
 
- //  [PATCH - ROUTE:  ]  
+ //  [PATCH - ROUTE: api/user/update/:id ]  
     async updateUser(req,res){
         console.log(req.params.id);
         var user = await User.findById(req.params.id);
@@ -111,9 +115,51 @@ class UserController {
             res.json(updateUser);
         }
         else {
-        res.status(404)
-        throw new Error('User does not exist!')
+            res.status(404);
+            throw new Error('User does not exist!');
         }
+    }
+
+ //  [POST - ROUTE: api/user/sendResetEmail ]  
+    async sendResetMail(req, res, next) { 
+        var {email} = req.body;
+        var user = await User.findOne({email: email}).lean();
+        if (!user) {
+            res.status(404);
+            throw new Error('User does not exist!');
+        }
+        let tokenReset = await Token.findOne({ userId: user._id });
+        if (!tokenReset) {
+            tokenReset = await new Token({
+                userId: user._id,
+                token: crypto.randomBytes(32).toString("hex"),
+            }).save();
+        }
+        const link = `${process.env.BASE_URL}/resetpassword/${user._id}/${tokenReset.token}`;
+        await sendEmail(user.email, "Password reset", link);
+        res.status(200);
+        res.json({
+            message: "Successfully sent reset email!"
+        });
+    }
+
+ //  [POST - ROUTE: api/user/sendResetEmail ]  
+    async resetPass(req, res, next) { 
+        var userId = req.params.resetToken;  
+        var newPassword = req.body.newPassword;
+        var token = await Token.findOne({userId});
+        var user = await User.findById(token.userId).lean();
+
+        const salt = await bcrypt.genSalt(10);
+        const hashPassword = await  bcrypt.hash(newPassword, salt);
+        user.password = hashPassword;
+
+        await User.updateOne({_id: userId},user);
+        await token.delete();
+        res.status(200);
+        res.json({
+            message: "Successfully reset password!"
+        });
     }
 }
 

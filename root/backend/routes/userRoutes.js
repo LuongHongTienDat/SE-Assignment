@@ -4,7 +4,9 @@ const userController = require('../controllers/userController');
 
 router.post('/register', userController.registerUser);
 router.post('/auth', userController.authUser);
+router.post('/sendResetEmail', userController.sendResetMail);
 router.post('/update/:id', userController.updateUser);
+router.get('/:id', userController.getUserProfile);
 
 
 
