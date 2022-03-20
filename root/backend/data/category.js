@@ -1,23 +1,23 @@
 const cate =[
     {
-        cateName:'sushi',
+        cateName:'SuShi',
         cateID:1,
         image:'https://pngimg.com/uploads/sushi/sushi_PNG9202.png'
     },
     {
-        cateName:'soups',
+        cateName:'Soups',
         cateID:2,
         image:'https://pngimg.com/uploads/soup/soup_PNG108.png'
     }, {
-        cateName:'dessert',
+        cateName:'Dessert',
         cateID:3,
         image:'https://freepngimg.com/download/fruit/4-2-fruit-png-image.png'
     }, {
-        cateName:'drinks',
+        cateName:'Drinks',
         cateID:4,
         image:'https://pngimg.com/uploads/sushi/sushi_PNG9202.png'
     }, {
-        cateName:'fastfood',
+        cateName:'Fastfood',
         cateID:5,
         image:'https://pngimg.com/uploads/sushi/sushi_PNG9202.png'
     },
