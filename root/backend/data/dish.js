@@ -1,6 +1,5 @@
 const dish =[
     {
-        id:1,
         name:'Combo Sushi',
         image:'https://pngimg.com/uploads/sushi/sushi_PNG9202.png',
         category:'sushi',
@@ -16,7 +15,6 @@ const dish =[
         isBestSeller:true
     },
     {
-        id:2,
         name:'Oshizushi',
         image:'https://vntopfood.com/wp-content/uploads/2022/02/Cach-lam-sushi-ca-hoi-1-min-1024x553.png',
         category:'sushi',
@@ -32,7 +30,6 @@ const dish =[
         isBestSeller:''
     },
     {
-        id:3,
         name:'Tempura',
         image:'https://www.pikpng.com/pngl/b/398-3984487_click-to-enlarge-tempura-clipart.png',
         category:'sushi',
@@ -48,7 +45,6 @@ const dish =[
         isBestSeller:''
     },
     {
-        id:4,
         name:'Chirashizushi',
         image:'https://www.kikkoman.com/en/foodforum/img/recipe-t-31-1-01.png',
         category:'sushi',
@@ -64,7 +60,6 @@ const dish =[
         isBestSeller:''
     },
     {
-        id:5,
         name:'Gukan Maki',
         image:'https://www.ayasushi.fr/wp-content/uploads/2016/09/oeufsdesaumon-mini-gunkan-300x300.png',
         category:'sushi',
@@ -80,7 +75,6 @@ const dish =[
         isBestSeller:''
     },
     {
-        id:6,
         name:'Soup bí đỏ',
         image:'https://bizweb.dktcdn.net/thumb/grande/100/431/174/products/005.png?v=1627544849563',
         category:'soups',
@@ -96,7 +90,6 @@ const dish =[
         isBestSeller:''
     },
     {
-        id:7,
         name:'Soup cua',
         image:'https://salt.tikicdn.com/cache/w1200/ts/product/e4/3b/54/8c56ac7bfc2f45bba05efcde966d9250.png',
         category:'soups',
@@ -112,7 +105,6 @@ const dish =[
         isBestSeller:true
     },
     {
-        id:8,
         name:'Soup nấm',
         image:'https://product.hstatic.net/1000190406/product/mixed_mushroom_menu_411127a13a254129a684eca63563180f_large.png',
         category:'soups',
@@ -128,7 +120,6 @@ const dish =[
         isBestSeller:''
     },
     {
-        id:9,
         name:'Soup lá cẩm nấm tuyết gà xé',
         image:'https://product.hstatic.net/1000206480/product/sup_la_cam_d831f3ab2d9d49d78eb350b252c1aa23_1024x1024.png',
         category:'soups',
@@ -144,7 +135,6 @@ const dish =[
         isBestSeller:true
     },
     {
-        id:10,
         name:'Coca-Cola',
         image:'https://popeyes.vn/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/o/coca.png',
         category:'drinks',
@@ -160,7 +150,6 @@ const dish =[
         isBestSeller:true
     },
     {
-        id:11,
         name:'Trà đào',
         image:'https://shopnguyenlieu.com/wp-content/uploads/2019/09/tradaothachdao-550x467.png',
         category:'drinks',
@@ -176,7 +165,6 @@ const dish =[
         isBestSeller:true
     },
     {
-        id:12,
         name:'Vodka',
         image:'http://bizweb.dktcdn.net/thumb/grande/100/036/299/products/smirnoff-vodka-red-700ml.png?v=1643270887690',
         category:'drinks',
@@ -192,7 +180,6 @@ const dish =[
         isBestSeller:true
     },
     {
-        id:13,
         name:'Pepsi',
         image:'http://scontent.webpluscnd.net/photos-df/a-0/7714-1688041-1/pepsi.png?atk=e37811ba2046832cb285a8377910107c',
         category:'drinks',
@@ -208,7 +195,6 @@ const dish =[
         isBestSeller:''
     },
     {
-        id:14,
         name:'Kem dừa',
         image:'https://kemmiennhietdoi.com/timthumb.php?src=upload/product/kem-dua1603442684_300x300.png&w=300&h=300&zc=2&q=85',
         category:'dessert',
@@ -224,7 +210,6 @@ const dish =[
         isBestSeller:true
     },
     {
-        id:15,
         name:'Pudding',
         image:'https://www.nicepng.com/png/full/95-951391_caramel-pudding-cream-caramel-pudding-png.png',
         category:'dessert',
@@ -240,7 +225,6 @@ const dish =[
         isBestSeller:''
     },
     {
-        id:16,
         name:'Bánh flan',
         image:'https://product.hstatic.net/200000388411/product/banhflan-1024_6393ed364fcb4b7587298dabb8b2d78a.png',
         category:'dessert',
@@ -256,7 +240,6 @@ const dish =[
         isBestSeller:''
     },
     {
-        id:17,
         name:'Gà rán',
         image:'https://fujimart.vn/image/cache/catalog/delica/dui%20ga%20chien-502x502.png',
         category:'fastfood',
@@ -272,7 +255,6 @@ const dish =[
         isBestSeller:''
     },
     {
-        id:18,
         name:'Burger',
         image:'https://freepngimg.com/thumb/burger/22388-5-burger-food.png',
         category:'fastfood',
@@ -288,7 +270,6 @@ const dish =[
         isBestSeller:''
     },
     {
-        id:19,
         name:'Pizza',
         image:'https://clipart-best.com/img/pizza/pizza-clip-art-48.png',
         category:'fastfood',
@@ -304,7 +285,6 @@ const dish =[
         isBestSeller:true
     },
     {
-        id:20,
         name:'Khoai tây chiên',
         image:'https://mcdonalds.vn/uploads/2018/food/ga-ran/large_world_famous_fries.png',
         category:'fastfood',
