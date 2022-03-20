@@ -11,7 +11,6 @@ const dish =[
         reviews:'',
         dishDescription:'Bao gồm 4 loại sushi: Sushi cá hồi,Sushi cuộn cali, Sushi cuộn da cá hồi., Sushi cuộn cá hồi.',
         countInStock:'',
-        isCheck:false,
         isBestSeller:true
     },
     {
@@ -26,7 +25,6 @@ const dish =[
         reviews:'',
         dishDescription:'Được làm bằng cách cho các lớp Neta và Shari, hần Neta bao gồm các loại cá và hải sản như cá thu hoặc cá hồi; với hình dạng đáo này mà Oshizushi thường được lựa chọn thưởng thức như cơm hộp Bento hoặc quà tặng.',
         countInStock:'',
-        isCheck:false,
         isBestSeller:''
     },
     {
@@ -41,7 +39,6 @@ const dish =[
         reviews:'',
         dishDescription:'Đây là một món ăn đặc trưng góp phần đưa ẩm thực Nhật Bản lan tỏa mạnh mẽ hơn trên thế giới. Cùng với Sushi, Tempura “đánh thức” mọi giác quan của người dùng bằng sự tinh tế, hài hòa và phong phú trong hương vị.',
         countInStock:'',
-        isCheck:false,
         isBestSeller:''
     },
     {
@@ -56,7 +53,6 @@ const dish =[
         reviews:'',
         dishDescription:'Chirashizushi là một bát cơm với nhiều loại nguyên liệu khác nhau, với phần Neta là các hải sản phổ biến như cá hồi, mực, tôm luộc cùng cùng trứng chiên cắt nhỏ và dưa chuột. Món ăn tương tự như Kaisendon (Cơm hải sản); sự khiến biệt giữa hai món ăn là Chirashizushi sử dụng Shari – cơm Sushi trộn giấm, còn Kaisendon sử dụng cơm trắng hấp chín.',
         countInStock:'',
-        isCheck:false,
         isBestSeller:''
     },
     {
@@ -71,7 +67,6 @@ const dish =[
         reviews:'',
         dishDescription:'Món ăn được làm bằng cách quấn một dải Nori rộng xung quanh một nắm cơm trong khi để lại đủ không gian ở trên cùng để lắp đầu bằng phần nhân Neta khác nhau. Gukan được hiểu là “chiến hạm” hoặc “tàu chiến”, bắt nguồn từ hình dạng giống như một con tàu nhỏ của nó.',
         countInStock:'',
-        isCheck:false,
         isBestSeller:''
     },
     {
@@ -86,7 +81,6 @@ const dish =[
         reviews:'',
         dishDescription:'Súp bí đỏ thơm ngon, mang chút béo ngậy của sữa và whipping cream sẽ là món ăn đổi vị cho những ngày này. Súp bỉ đỏ ăn kèm với bánh mì nướng là sự kết hợp hoàn hảo và ngon miệng. ',
         countInStock:'',
-        isCheck:false,
         isBestSeller:''
     },
     {
@@ -101,7 +95,6 @@ const dish =[
         reviews:'',
         dishDescription:'Súp cua với nhiều màu sắc bắt mắt của cua và các loại đậu, rau củ đi kèm, đặc biệt súp cua lại giàu chất dinh dưỡng và nhiều canxi rất tốt cho sức khỏe. Món này ăn vào những ngày trời lạnh là ngon nhất, có thể dùng làm món khai vị trong các bữa tiệc cũng rất hợp.',
         countInStock:'',
-        isCheck:false,
         isBestSeller:true
     },
     {
@@ -116,7 +109,6 @@ const dish =[
         reviews:'',
         dishDescription:'súp kem nấm mang hương vị đậm đà, xen lẫn vị tươi ngon tự nhiên từ nấm hương, bị beo béo từ kem tươi. Khi ăn sẽ cảm nhận được mùi hương thơm dịu từ xạ hương và ngò, tạo nên hương vị cuốn hút khó cưỡng. Ăn kèm với lát bánh mì thì chuẩn vị nhé!',
         countInStock:'',
-        isCheck:false,
         isBestSeller:''
     },
     {
@@ -131,7 +123,6 @@ const dish =[
         reviews:'',
         dishDescription:'Món súp lá cẩm nấm tuyết gà xé là sự kết hợp độc đáo của nhiều nguyên liệu. Với vị ngọt thanh mát từ nước thịt gà luộc, nấm tuyết thơm nhiều dinh dưỡng có độ dai sần sật khi ăn khá vui miệng. Các đầu bếp tại Feast Box đã sử dụng lá cẩm có màu tím "mộng mơ" tạo màu sắc nổi bật cho món súp thêm phần hấp dẫn kích thích thị giác.',
         countInStock:'',
-        isCheck:false,
         isBestSeller:true
     },
     {
@@ -146,7 +137,6 @@ const dish =[
         reviews:'',
         dishDescription:'CacaCola vị nguyên bản',
         countInStock:'',
-        isCheck:false,
         isBestSeller:true
     },
     {
@@ -161,7 +151,6 @@ const dish =[
         reviews:'',
         dishDescription:'Khi nhiệt độ ở Sài Gòn tiệm cận con số 40 thì trà đào ướp lạnh bỗng dưng trở thành món giải khát cứu cánh. Trà đào thì cũng có trà đào “this”, trà đào “that”',
         countInStock:'',
-        isCheck:false,
         isBestSeller:true
     },
     {
@@ -176,7 +165,6 @@ const dish =[
         reviews:'',
         dishDescription:'Thức uống giúp bạn tăng cường thể lực như khi Nga đánh Ukraine',
         countInStock:'',
-        isCheck:false,
         isBestSeller:true
     },
     {
@@ -191,7 +179,6 @@ const dish =[
         reviews:'',
         dishDescription:'Nếu bạn không tích Coca nguyên bản thì bạn đã có Pesi vị nguyên bản',
         countInStock:'',
-        isCheck:false,
         isBestSeller:''
     },
     {
@@ -206,7 +193,6 @@ const dish =[
         reviews:'',
         dishDescription:'Những viên kem mềm mịn, béo ngậy hòa cùng với lớp sốt socola ngọt ngào, thêm chút bùi bùi của đậu phộng rang và dừa sấy khô đảm bảo sẽ khiến bất kì ai đã nếm qua đều không thể cưỡng lại được.',
         countInStock:'',
-        isCheck:false,
         isBestSeller:true
     },
     {
@@ -221,7 +207,6 @@ const dish =[
         reviews:'',
         dishDescription:'Bánh pudding là loại bánh lạnh được làm đông bởi gelatin kết hợp với một số hương vị khác nhau như vị trà xanh, vị dâu, vị cam,Bánh pudding với vị thơm ngon mềm mịn thường được dùng để ăn tráng miệng hoặc topping trà sữa',
         countInStock:'',
-        isCheck:false,
         isBestSeller:''
     },
     {
@@ -236,7 +221,6 @@ const dish =[
         reviews:'',
         dishDescription:'ăn nguội bằng cách để lạnh trong tủ lạnh trước khi ăn. Bánh được trút lên đĩa để phần có đường thắng màu cánh gián trên miếng bánh quay lên trên. ',
         countInStock:'',
-        isCheck:false,
         isBestSeller:''
     },
     {
@@ -251,7 +235,6 @@ const dish =[
         reviews:'',
         dishDescription:'Gà rán vàng ruộm rất bắt mắt, lớp vỏ thì giòn rụm hòa quyện thịt gà mềm ngọt bên trong. Gà rán không cay nên phù hợp cho tất cả các thành viên trong gia đình, đặc biệt là các em nhỏ.',
         countInStock:'',
-        isCheck:false,
         isBestSeller:''
     },
     {
@@ -266,7 +249,6 @@ const dish =[
         reviews:'',
         dishDescription:'Gà rán vàng ruộm rất bắt mắt, lớp vỏ thì giòn rụm hòa quyện thịt gà mềm ngọt bên trong. Gà rán không cay nên phù hợp cho tất cả các thành viên trong gia đình, đặc biệt là các em nhỏ.',
         countInStock:'',
-        isCheck:false,
         isBestSeller:''
     },
     {
@@ -281,7 +263,6 @@ const dish =[
         reviews:'',
         dishDescription:'Pizza hải sản phô mai là một món nướng với sự kết hợp hài hoà giữa vị tươi ngon của hải sản và vị thơm béo từ phô mai tạo nên vị ngon khó cưỡng,',
         countInStock:'',
-        isCheck:false,
         isBestSeller:true
     },
     {
@@ -296,7 +277,6 @@ const dish =[
         reviews:'',
         dishDescription:'khoai tây chiên ngoài giòn rụm trong mềm thơm, ngon hết xảy luôn',
         countInStock:'',
-        isCheck:false,
         isBestSeller:''
     },
 ]
