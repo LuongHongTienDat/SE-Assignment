@@ -15,6 +15,6 @@ const user=[
         phoneNumber:'012345678',
         gender:'female',
         password:'123456789',
-        roleUser:'true'
+        roleUser:'admin'
     },
 ]
