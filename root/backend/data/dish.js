@@ -280,3 +280,5 @@ const dish =[
         isBestSeller:''
     },
 ]
+
+module.exports = dish;

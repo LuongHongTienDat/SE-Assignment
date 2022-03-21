@@ -17,4 +17,15 @@ const user=[
         password:'123456789',
         roleUser:'admin'
     },
+    {
+        name:'Selena Gomez',
+        email:'luongdat123456@gmail.com',
+        userName:'selenagomez',
+        phoneNumber:'05555555',
+        gender:'female',
+        password:'lhtd123',
+        roleUser:'customer'
+    },
 ]
+
+module.exports = user;

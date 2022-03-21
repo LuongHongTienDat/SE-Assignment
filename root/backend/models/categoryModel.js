@@ -6,10 +6,6 @@ const categoryModel = new Schema({
         type: String,
         required: true,
     },
-    cateID: {
-        type: String,
-        require: true,
-    },
     image: {
         type: String,
         required: true,
