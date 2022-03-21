@@ -49,14 +49,14 @@ export default function Slider() {
       slidesPerView={1}
       loop={true}
       pagination={{clickable:true}}
-      autoplay={{ delay: 2500,disableOnInteraction: false }}
+      autoplay={{ delay: 2500}}
 
     >
         {
         sliderList.map((slider)=>(
           <SwiperSlide key ={slider.id}>   
           <>
-          <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col md:flex-row pt-20">
             <div  className="basis-3/4 rounded-lg flex items-center justify-center lg:ml-32">
                 <div className="flex flex-col p-8 lg:p-32">
                   <h3 className="text-gray-600 p-2">{slider.content}</h3>

@@ -36,7 +36,7 @@ function AdProduct (){
                     ))
                     
                 }
-                <div className="md:basis-1/3 lg:basis-[22%] bg-white p-6 rounded-xl border border-gray-50 hover:bg-blue-100"
+                <div className="md:basis-1/3 lg:basis-[22%] bg-white p-6 rounded-xl border border-gray-50 hover:bg-blue-100 mb-4"
                     onClick={()=>{navigate('add')}}>
                    
                     <div className="flex justify-between items-start">

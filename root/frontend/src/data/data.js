@@ -331,24 +331,24 @@ let foodList =[
 export const cate =[
     {
         cateName:'SuShi',
-        cateID:1,
+        id:1,
         image:'https://pngimg.com/uploads/sushi/sushi_PNG9202.png'
     },
     {
         cateName:'Soups',
-        cateID:2,
+        id:2,
         image:'https://pngimg.com/uploads/soup/soup_PNG108.png'
     }, {
         cateName:'Dessert',
-        cateID:3,
+        id:3,
         image:'https://freepngimg.com/download/fruit/4-2-fruit-png-image.png'
     }, {
         cateName:'Drinks',
-        cateID:4,
+        id:4,
         image:'https://pngimg.com/uploads/sushi/sushi_PNG9202.png'
     }, {
         cateName:'Fastfood',
-        cateID:5,
+        id:5,
         image:'https://pngimg.com/uploads/sushi/sushi_PNG9202.png'
     },
 ]

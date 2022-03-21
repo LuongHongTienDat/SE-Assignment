@@ -21,7 +21,7 @@ function CateAdmin () {
                     cate.map((category,index)=>(
 
                     <div key={index} className="md:basis-1/3 lg:basis-[22%] bg-white p-6 rounded-xl border border-gray-50 hover:bg-blue-100"
-                    onClick={()=>{navigate(`${category.cateID}`)}}>
+                    onClick={()=>{navigate(`${category.id}`)}}>
                     <div className="flex justify-between items-start">
                         <div className="flex flex-col">
                             <p className="text-xs text-gray-600 tracking-wide">Category</p>

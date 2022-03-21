@@ -16,8 +16,10 @@ import Home from './components/Pages/Home/home';
 import Info from './components/Pages/Info/info';
 import CateAdmin from './components/Pages/Admin/Category/category';
 import UpdateCategory from './components/Pages/Admin/AdminCategory/updateCategory';
-import AddCategory from './components/Pages/Admin/AdminCategory/addProduct';
+import AddCategory from './components/Pages/Admin/AdminCategory/addCate';
 import AdProduct from './components/Pages/Admin/Product/product';
+import UpdateProduct from './components/Pages/Admin/AdminCategory/updateProduct';
+import AddProduct from './components/Pages/Admin/AdminCategory/addPrd';
 
 
 
@@ -68,9 +70,13 @@ function App() {
       <Route path="/Login/admin" element={<AdminLogin/>}/>
       <Route path="/admin" element={<AdminPage/>}/>
       <Route path="/admin/cate" element={<CateAdmin/>}/>
-      <Route path="/admin/cate/:cateID" element={<UpdateCategory/>}/>
+      <Route path="/admin/cate/:id" element={<UpdateCategory/>}/>
       <Route path="/admin/cate/add" element={<AddCategory/>}/>
       <Route path="/admin/product" element={<AdProduct/>}/>
+      <Route path="/admin/product/:id" element={<UpdateProduct/>}/>
+      <Route path="/admin/product/add" element={<AddProduct/>}/>
+
+
 
 
 

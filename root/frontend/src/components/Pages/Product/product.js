@@ -137,7 +137,7 @@ export default function Product({onAdd,foodList}) {
                 </div>
 
                 <div className=" basis-1/3 items-left justify-center">
-                    <img className="ml-8" src={result.image} alt="" ></img>
+                    <img className="ml-8 w-96 lg:w-fit" src={result.image} alt="" ></img>
                 </div>
 
             </div>
