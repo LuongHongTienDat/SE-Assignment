@@ -17,4 +17,5 @@ const cate =[
         image:'https://pngimg.com/uploads/sushi/sushi_PNG9202.png'
     },
 ]
-    
+module.exports = cate;
+
