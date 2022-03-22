@@ -275,11 +275,7 @@ const dish =[
         rating:4,
         numReviews:0,
         reviews:[],
-<<<<<<< HEAD
         dishDescription:'Khoai tây chiên ngoài giòn rụm trong mềm thơm, ngon hết xảy luôn',
-=======
-        dishDescription:'khoai tây chiên ngoài giòn rụm trong mềm thơm, ngon hết xảy luôn',
->>>>>>> d484beecc1e97cc78eae1f5349b026ada4abe46b
         countInStock:5,
         isBestSeller:true
     },

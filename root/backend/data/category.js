@@ -1,6 +1,6 @@
 const cate =[
     {
-        cateName:'SuShi',
+        cateName:'Sushi',
         image:'https://pngimg.com/uploads/sushi/sushi_PNG9202.png'
     },
     {
@@ -13,7 +13,7 @@ const cate =[
         cateName:'Drinks',
         image:'https://pngimg.com/uploads/sushi/sushi_PNG9202.png'
     }, {
-        cateName:'Fastfood',
+        cateName:'Fast food',
         image:'https://pngimg.com/uploads/sushi/sushi_PNG9202.png'
     },
 ]
