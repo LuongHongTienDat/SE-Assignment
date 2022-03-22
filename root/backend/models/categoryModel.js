@@ -5,14 +5,13 @@ const categoryModel = new Schema({
     cateName: {
         type: String,
         required: true,
+        default: ""
     },
     image: {
         type: String,
         required: true,
         default: ""
     }
-}, {
-    timestamps: true,
 })
 
 module.exports = mongoose.model('Category', categoryModel);

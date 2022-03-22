@@ -23,8 +23,7 @@ const dishModel = new Schema({
     },
     category:{
         type: String,
-        required: true,
-        ref: "Category"
+        required: true
     },
     dishDescription:{
         type: String,

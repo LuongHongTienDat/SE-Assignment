@@ -1,9 +1,9 @@
 const db = require('./config/db');
 const bcrypt = require ("bcryptjs");
 
-const users = require('./data/user.js');
-const categories = require('./data/category.js');
-const dishes = require('./data/dish.js');
+var users = require('./data/user.js');
+var categories = require('./data/category.js');
+var dishes = require('./data/dish.js');
 
 const User = require('./models/userModel');
 const Dish = require('./models/dishModel');
@@ -21,6 +21,12 @@ db.connect();
 
 const importData = async () => {
     try {
+      const newUsers = await Promise.all(users.map(async (user) => {
+          var salt = await bcrypt.genSalt(10);
+          user.password = await  bcrypt.hash(user.password,salt);
+          return user;
+        }));
+
       await User.deleteMany();
       await Dish.deleteMany();
       await Category.deleteMany();
@@ -29,14 +35,12 @@ const importData = async () => {
       await ResetToken.deleteMany();
 
 
-      const importedDishes = await Dish.insertMany(dishes);
       const importedCategories = await Category.insertMany(categories);
+      const importedDishes = await Dish.insertMany(dishes);
 
-      users = await user.map( async (user) => {
-          var salt = await bcrypt.genSalt(10);
-          user.password = await  bcrypt.hash(password,salt);
-      })
-      const importedUsers = await User.insertMany(users);
+
+
+      const importedUsers = await User.insertMany(newUsers);
 
       console.log("Sucessfully imported data in database!");
       process.exit();

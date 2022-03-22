@@ -19,4 +19,4 @@ const Token = new Schema({
 });
 
 
- module.exports = mongoose.model('Token',Token);
+ module.exports = mongoose.model('Reset_Token',Token);
