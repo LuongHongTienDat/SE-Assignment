@@ -27,7 +27,9 @@ const orderObj = new Schema({
         default: 0
     },
     quantity: {
-        type: Number
+        type: Number,
+        required: true,
+        default: 0
     },
     default: []
 })
