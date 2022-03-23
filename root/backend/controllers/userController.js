@@ -1,4 +1,6 @@
 const User = require('../models/userModel');
+const Cart = require('../models/cartModel');
+
 const generateToken = require("../utils/generateToken");
 const bcrypt = require ("bcryptjs");
 const crypto = require ("crypto");
@@ -23,10 +25,12 @@ class UserController {
             phoneNumber,
             gender,
             password: hashPassword,
-            roleUser: "Customer"
+            roleUser: "customer"
         });
         if (newUser){
+            await Cart.create({user: newUser._id, orderList: []});
             res.json({
+                _id: newUser._id,
                 name,
                 email,
                 userName,

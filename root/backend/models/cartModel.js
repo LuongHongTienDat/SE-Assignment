@@ -9,10 +9,10 @@ const cartModel = new Schema({
     },
 
     orderList:[{
-        product:{
+        dish:{
             type: mongoose.Schema.Types.ObjectId,
             required:true,
-            ref:"Product"
+            ref:"Dish"
         },
         name:{
             type: String,
@@ -25,11 +25,6 @@ const cartModel = new Schema({
             default:""
         },
         price:{
-            type: Number,
-            required: true,
-            default:0
-        },
-        countInStock:{
             type: Number,
             required: true,
             default:0

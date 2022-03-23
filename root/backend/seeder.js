@@ -37,14 +37,22 @@ const importData = async () => {
 
       const importedCategories = await Category.insertMany(categories);
       const importedDishes = await Dish.insertMany(dishes);
-
-
-
       const importedUsers = await User.insertMany(newUsers);
+      
+
+      // Create carts for customer accounts
+      var customers = await Promise.all(importedUsers.filter(
+          e => e.roleUser == "customer"
+      ));
+      var carts = await Promise.all(customers.map(async (customer) => {
+        return {user: customer._id, orderList:[]};
+      }));
+      await Cart.insertMany(carts);
 
       console.log("Sucessfully imported data in database!");
       process.exit();
-    } catch (error) {
+    }
+    catch (error) {
       console.error(`${error}`);
       process.exit(1);
     }
