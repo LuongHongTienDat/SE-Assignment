@@ -40,8 +40,8 @@ export default function AdminPage() {
                     <h3 className="mt-1 text-lg text-blue-500 font-bold">{category.cateName}</h3>
                     <span className="mt-4 text-xs text-gray-500">Last Transaction 3 Hours ago</span>
                 </div>
-                <div className="bg-blue-500 p-2 md:p-1 xl:p-2 rounded-md">
-                    <img src="https://atom.dzulfarizan.com/assets/dish-2.png" alt="icon" className="w-auto h-8 md:h-6 xl:h-8 object-cover"/>
+                <div className="bg-gray-200 p-2 md:p-1 xl:p-2 rounded-md">
+                    <img src={category.image} alt="icon" className="w-auto h-8 md:h-6 xl:h-8 object-cover"/>
                 </div>
               </div>
             </div>

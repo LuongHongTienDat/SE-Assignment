@@ -27,7 +27,7 @@ function AdProduct (){
                             <h3 className="mt-1 text-lg text-blue-500 font-bold">{food.name}</h3>
                             <span className="mt-4 text-xs text-gray-500">Last Transaction 3 Hours ago</span>
                         </div>
-                        <div className="p-2 md:p-1 xl:p-2 rounded-md">
+                        <div className="bg-gray-200 p-2 md:p-1 xl:p-2 rounded-md">
                             <img src={food.image} alt="icon" className="w-auto h-8 md:h-6 xl:h-8 object-cover"/>
                         </div>
                     </div>
