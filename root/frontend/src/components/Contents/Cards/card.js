@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { useNavigate } from 'react-router-dom'
 import AddButton from "../Buttons/addButton";
 import CheckButton from "../Buttons/checkButton";
-
+import {AddContext} from "../../../App"
 
 export default function Card({foodList,state,setState}) {
     const navigate=useNavigate();
+    const cartItems= useContext(AddContext);
     const [pre, setPre] = useState(true);
 
     let foodCate = foodList.filter(e => e.category === state);
@@ -14,7 +15,15 @@ export default function Card({foodList,state,setState}) {
     if(state ==='popular'){
         foodCate = foodList.filter(e => e.isBestSeller === true);
     }
-    // const[state,setState] = useState(false);
+    function checkInCart(foodId){
+        if(typeof cartItems ==='undefined')
+            return false;
+        if(cartItems.find(e => e.id === foodId)){
+
+            return true;
+        }
+        return false;
+    }
     
     return (
       <>
@@ -69,7 +78,7 @@ export default function Card({foodList,state,setState}) {
                         
                         <div className="flex justify-between items-center">
                             <span className='text-3xl font-bold text-gray-900'>${food.price}</span>
-                            {food.isCheck && <AddButton></AddButton> ?<CheckButton></CheckButton>:<AddButton></AddButton>}
+                            {checkInCart(food.id) && <AddButton></AddButton> ?<CheckButton></CheckButton>:<AddButton></AddButton>}
                             
                         </div>
                         </div>

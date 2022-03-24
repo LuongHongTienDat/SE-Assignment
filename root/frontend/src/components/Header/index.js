@@ -37,43 +37,20 @@ const solutions = [
   },
   { name: 'About', description: "Your customers' data will be safe and secure.", href: '/About', icon: InformationCircleIcon },
   {
-    name: '/Contact',
+    name: 'Contact',
     description: "Connect with third-party tools that you're already using.",
     href: '/Contact',
     icon: ViewGridIcon,
   },
-  
-]
-const callsToAction = [
-  { name: 'Watch Demo', href: '#', icon: PlayIcon },
-  { name: 'Contact Sales', href: '#', icon: PhoneIcon },
-]
-const resources = [
   {
-    name: 'Help Center',
-    description: 'Get all of your questions answered in our forums or contact support.',
-    href: '#',
-    icon: SupportIcon,
-  },
-  {
-    name: 'Guides',
-    description: 'Learn how to maximize our platform to get the most out of it.',
-    href: '#',
+    name: 'Cart',
+    description: "Connect with third-party tools that you're already using.",
+    href: '/Cart',
     icon: BookmarkAltIcon,
   },
-  {
-    name: 'Events',
-    description: 'See what meet-ups and other events we might be planning near you.',
-    href: '#',
-    icon: CalendarIcon,
-  },
-  { name: 'Security', description: 'Understand how we take your privacy seriously.', href: '#', icon: ShieldCheckIcon },
+  
 ]
-const recentPosts = [
-  { id: 1, name: 'Boost your conversion rate', href: '#' },
-  { id: 2, name: 'How to use search engine optimization to drive traffic to your site', href: '#' },
-  { id: 3, name: 'Improve your customer experience', href: '#' },
-]
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -91,14 +68,16 @@ export default function Header() {
       <div className="mx-auto px-4 sm:px-6 fixed top-0 right-0 left-0 bg-white z-10">
         <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="#">
-              <span className="sr-only">Workflow</span>
+          <div className="flex justify-start lg:w-0 lg:flex-1">
+            <div className="cursor-pointer flex items-center">
               <img
                 className="h-8 ml-3 w-auto sm:h-10"
-                src="https://www.pinclipart.com/picdir/big/86-862588_mobi-food-logo-gif-clipart.png"
+                src="https://static.wixstatic.com/media/2cd43b_17040a042929442094fd1a2179d5bd29~mv2.png/v1/fill/w_320,h_320,q_90/2cd43b_17040a042929442094fd1a2179d5bd29~mv2.png"
                 alt=""
               />
-            </a>
+              <span className="font-bold text-2xl px-2 text-blue-600">Luna Eatery</span>
+            </div>
+          </div>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
             <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -155,8 +134,9 @@ export default function Header() {
         leave="duration-100 ease-in"
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
+        className="fixed top-0 right-0 left-0 bg-white z-10"
       >
-        <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden fixed top-0 right-0 left-0 bg-white z-10">
+        <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden ">
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">

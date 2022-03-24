@@ -7,9 +7,9 @@ export default function Footer() {
 		<div className="lg:w-1/3">
 			<a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
 				<div className="flex items-center justify-center w-12 h-12 rounded-full ">
-					<img src="https://www.pinclipart.com/picdir/big/86-862588_mobi-food-logo-gif-clipart.png" alt=""></img>
+					<img src="https://static.wixstatic.com/media/2cd43b_17040a042929442094fd1a2179d5bd29~mv2.png/v1/fill/w_320,h_320,q_90/2cd43b_17040a042929442094fd1a2179d5bd29~mv2.png" alt=""></img>
 				</div>
-				<span className="self-center text-3xl font-semibold text-green-600 ">Bug Team</span>
+				<span className="self-center text-3xl font-bold text-blue-600 ">Luna Eatery</span>
 			</a>
 		</div>
 		<div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">

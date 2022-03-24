@@ -37,7 +37,7 @@ const selectMenu = [
 export default function SelectCard({state,setState}) {
     return (
       <>
-        <p className="text-2xl font-semibold text-center pt-8"> Options</p>
+        <p className="text-2xl font-semibold text-center pt-32"> Options</p>
 
         <Swiper
         modules={[Autoplay,Navigation]}
@@ -70,7 +70,7 @@ export default function SelectCard({state,setState}) {
                         border border-solid border-green-500 border-2 transition ease-in-out hover:-translate-y-1 hover:scale-110
                         hover:bg-green-100"> 
 
-                        <img className="w-24 ml-6" src={menu.image} alt=""></img>
+                        <img className="w-24 ml-6 h-24" src={menu.image} alt=""></img>
                         
                         <p className="mx-auto font-semibold text-xl">{menu.title}</p>
                         

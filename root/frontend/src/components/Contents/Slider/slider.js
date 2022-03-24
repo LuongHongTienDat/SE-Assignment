@@ -56,7 +56,7 @@ export default function Slider() {
         sliderList.map((slider)=>(
           <SwiperSlide key ={slider.id}>   
           <>
-          <div className="flex flex-col md:flex-row pt-20">
+          <div className="flex flex-col md:flex-row pt-32">
             <div  className="basis-3/4 rounded-lg flex items-center justify-center lg:ml-32">
                 <div className="flex flex-col p-8 lg:p-32">
                   <h3 className="text-gray-600 p-2">{slider.content}</h3>

@@ -106,7 +106,7 @@ export default function Product({onAdd,foodList}) {
           <ReactNotifications/>
            <Header/>
 
-            <div className="flex flex-col lg:flex-row flex-wrap gap-x-8 gap-y-20 justify-center items-center pt-28">
+            <div className="flex flex-col lg:flex-row flex-wrap gap-x-8 gap-y-20 justify-center items-center pt-28 md: pt-44">
 
                 <div className="basis-1/3 rounded-lg flex flex-col items-left justify-center p-2">
                     <p className="text-5xl font-semibold block ">{result.name}</p>

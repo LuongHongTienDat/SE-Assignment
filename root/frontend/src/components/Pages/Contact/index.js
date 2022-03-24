@@ -35,7 +35,7 @@ export default function Contact() {
       <>
       <Header/>
 
-        <div class="max-w-screen-xl px-4 mx-auto md:px-8 pt-8">
+        <div class="max-w-screen-xl px-4 mx-auto md:px-8 pt-32">
           <div class="mb-10 md:mb-16">
             <h2
               class="

@@ -17,10 +17,7 @@ export default function Home() {
 
     <Header/>
     
-    <div className="w-64 h-64 z-10 bg-green-500 right-0 fixed clip hidden lg:flex">
-        
-    </div>
-
+  
      <Slider></Slider>
      <Category></Category>
      <Card foodList={foodList} state={state} ></Card>

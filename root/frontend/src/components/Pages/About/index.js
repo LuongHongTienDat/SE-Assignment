@@ -60,7 +60,7 @@ export default function About() {
       <>
       <Header/>
 
-      <p className="pt-4 text-center text-2xl font-semibold"> About Us</p>
+      <p className="pt-4 text-center text-2xl font-semibold pt-32"> About Us</p>
       <p className="pt-1 text-center text-3xl font-semibold uppercase text-green-600 pb-8 hover:text-blue-600 
       transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:rotate-3 hover:skew-x-3">
        why you choice our restaurant?</p>
