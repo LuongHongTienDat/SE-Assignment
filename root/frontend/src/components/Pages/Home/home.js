@@ -86,9 +86,9 @@ export default function Home() {
                   
                   <div>
                     <p className="text-gray-600">How much welght could you lose for good?
-                        Members eat freely five days ơ week no rules or food
-                        lIogging. How much welight could you lose for good?
-                        Members eadt freely fiíve days ơ week no rules or food
+                        Members eat freely five days a week no rules or food
+                        l ogging. How much welight could you lose for good?
+                        Members eadt freely fiíve days a week no rules or food
                         logging five days a week.</p>
 
                     <div className="flex items-center mt-3 mb-2.5">

@@ -1,6 +1,7 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay,Pagination} from 'swiper';
+import beepsteak from '../../../images/beefsteak.png'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -15,7 +16,7 @@ const sliderList = [
   thirContent :'To my food',
   discount :'20% | DISCOUNT UPON',
   buttonContent:'Register',
-  image:'https://shibares.herokuapp.com/images/home-img-2.png'
+  image:beepsteak
   },
 
   {
@@ -70,7 +71,7 @@ export default function Slider() {
             </div>
 
               <div className="basis-11/12 rounded-lg flex items-center justify-center ">
-                <img src={slider.image}  className="w-auto lg:mr-32 mt-8"></img>
+                <img src={slider.image}  className="w-5/6 lg:mr-32 mt-8"></img>
               </div>
           </div>
           </>
