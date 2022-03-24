@@ -73,9 +73,9 @@ class UserController {
     }
 
 
- //  [ GET - ROUTE: api/user/:id ]
+ //  [ GET - ROUTE: api/user ]
     async getUserProfile(req,res){
-        var user = await User.findById(req.params.id);
+        var user = await User.findById(req.user._id);
         if(user){
             res.json({
                 _id: user._id,
@@ -93,10 +93,9 @@ class UserController {
         }
     }
 
- //  [PATCH - ROUTE: api/user/update/:id ]  
+ //  [PATCH - ROUTE: api/user/update/]  
     async updateUser(req,res){
-        console.log(req.params.id);
-        var user = await User.findById(req.params.id);
+        var user = await User.findById(req.user._id);
         if (user){
             if(req.body.password) {
                 var salt = await bcrypt.genSalt(10);
