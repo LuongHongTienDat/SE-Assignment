@@ -5,6 +5,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const db = require('./config/db');
 const routes = require('./routes');
+const errorHandleMiddlewares = require('./middlewares/errorHandleMiddlewares');
 
 // For .env access
 require("dotenv").config();
@@ -32,6 +33,8 @@ app.get("/", (req, res) => {
 
 // Route 
 routes(app);
+
+app.use(errorHandleMiddlewares.errorHandler);
 
 app.listen(port, () => {
     console.log(`App listening at port: ${port}`)

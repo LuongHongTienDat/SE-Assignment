@@ -4,6 +4,7 @@ const Cart = require('../models/cartModel');
 const generateToken = require("../utils/generateToken");
 const bcrypt = require ("bcryptjs");
 const crypto = require ("crypto");
+const asyncHandler = require('express-async-handler')
 
 const Token = require('../models/resetTokenModel');
 const sendEmail = require("../utils/sendEmail");
@@ -11,7 +12,7 @@ const sendEmail = require("../utils/sendEmail");
 class UserController {
 
  //  [ POST - ROUTE: api/user/register ]
- async registerUser(req,res){
+ registerUser = asyncHandler( async (req,res) => {
     const {name, userName, password, phoneNumber, gender, email} = req.body;
     console.log(req.body);
     const user = await User.findOne({ $or:[ {email}, {userName} ]});
@@ -49,10 +50,10 @@ class UserController {
             throw new Error('User has already existed!');
     }
     
-}
+})
 
 //  [ POST - ROUTE: api/user/auth ]
-    async authUser(req,res){
+    authUser = asyncHandler( async (req,res) => {
         const {userName , password} = req.body;
         const user = await User.findOne({userName});
         if(user && (await user.matchPassword(password))){
@@ -70,11 +71,11 @@ class UserController {
             res.status(401);
             throw new Error("Invalid UserName or Password");
         }
-    }
+    })
 
 
  //  [ GET - ROUTE: api/user ]
-    async getUserProfile(req,res){
+    getUserProfile = asyncHandler( async (req,res) => {
         var user = await User.findById(req.user._id);
         if(user){
             res.json({
@@ -91,10 +92,10 @@ class UserController {
             res.status(404);
             throw new Error('User does not exist!');
         }
-    }
+    })
 
  //  [PATCH - ROUTE: api/user/update/]  
-    async updateUser(req,res){
+    updateUser = asyncHandler( async (req,res) => {
         var user = await User.findById(req.user._id);
         if (user){
             if(req.body.password) {
@@ -121,10 +122,10 @@ class UserController {
             res.status(404);
             throw new Error('User does not exist!');
         }
-    }
+    })
 
  //  [POST - ROUTE: api/user/sendResetEmail ]  
-    async sendResetMail(req, res, next) { 
+    sendResetMail = asyncHandler( async (req,res) => {
         var {email} = req.body;
         var user = await User.findOne({email: email}).lean();
         if (!user) {
@@ -144,10 +145,10 @@ class UserController {
         res.json({
             message: "Successfully sent reset email!"
         });
-    }
+    })
 
  //  [POST - ROUTE: api/user/sendResetEmail ]  
-    async resetPass(req, res, next) { 
+    resetPass = asyncHandler( async (req,res) => {
         var userId = req.params.resetToken;  
         var newPassword = req.body.newPassword;
         var token = await Token.findOne({userId});
@@ -163,7 +164,7 @@ class UserController {
         res.json({
             message: "Successfully reset password!"
         });
-    }
+    })
 }
 
 module.exports = new UserController;
