@@ -6,6 +6,7 @@ const port = process.env.PORT || 5000;
 const db = require('./config/db');
 const routes = require('./routes');
 const errorHandleMiddlewares = require('./middlewares/errorHandleMiddlewares');
+const cors = require('cors');
 
 // For .env access
 require("dotenv").config();
@@ -26,6 +27,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
+
+app.use(cors())
 
 app.get("/", (req, res) => {
   res.send("Successfully running !");
