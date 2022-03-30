@@ -4,11 +4,12 @@ const asyncHandler = require('express-async-handler')
 
 class authMiddlewares {
 
-    protect = asyncHandler( async (req,res) => {
+    protect = asyncHandler( async (req,res,next) => {
         if (req.headers.authorization){
             try {
                 const decodedToken = jwt.verify(req.headers.authorization, process.env.JWT_SECRET);
                 req.user = { _id: decodedToken._id};
+                console.log(req.user);
                 next();
             }
             catch {
@@ -22,7 +23,7 @@ class authMiddlewares {
         }
     })
 
-    isAdmin = asyncHandler( async (req,res) => {
+    isAdmin = asyncHandler( async (req,res,next) => {
         var user = await User.findById(req.user._id);
         if (user && user.roleUser == 'admin') {
             next();
