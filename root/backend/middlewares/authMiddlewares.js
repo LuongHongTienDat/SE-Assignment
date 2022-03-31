@@ -9,7 +9,6 @@ class authMiddlewares {
             try {
                 const decodedToken = jwt.verify(req.headers.authorization, process.env.JWT_SECRET);
                 req.user = { _id: decodedToken._id};
-                console.log(req.user);
                 next();
             }
             catch {
