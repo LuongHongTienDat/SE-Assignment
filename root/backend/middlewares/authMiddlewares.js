@@ -5,9 +5,9 @@ const asyncHandler = require('express-async-handler')
 class authMiddlewares {
 
     protect = asyncHandler( async (req,res,next) => {
-        if (req.headers.authorization){
+        if (req.headers.authorization && req.headers.authorization.startsWith("Bearer")){
             try {
-                const decodedToken = jwt.verify(req.headers.authorization, process.env.JWT_SECRET);
+                const decodedToken = jwt.verify(req.headers.authorization.split(' ')[1], process.env.JWT_SECRET);
                 req.user = { _id: decodedToken._id};
                 console.log(req.user);
                 next();

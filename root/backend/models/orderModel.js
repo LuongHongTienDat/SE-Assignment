@@ -1,42 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const orderObj = new Schema({
-    product: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: "Product",
-    },
-    name: {
-        type: String,
-        required: true,
-        default: ""
-    },
-    image: {
-        type: String,
-        required: true,
-    },
-    price: {
-        type: Number,
-        required: true,
-        default: 0
-    },
-    countInStock: {
-        type: Number,
-        required: true,
-        default: 0
-    },
-    quantity: {
-        type: Number,
-        required: true,
-        default: 0
-    },
-    default: []
-})
 
-const paymentResultObj = new Object({
-    //
-})
+
 
 const orderModel = new Schema({
     user: {
@@ -44,7 +10,34 @@ const orderModel = new Schema({
         required: true,
         ref: "User"
     },
-    orderList: [{ orderObj }],
+    orderList:[{
+        dish:{
+            type: mongoose.Schema.Types.ObjectId,
+            required:true,
+            ref:"Dish"
+        },
+        name:{
+            type: String,
+            required:true,
+            default:""
+        },
+        image:{
+            type: String,
+            required: true,
+            default:""
+        },
+        price:{
+            type: Number,
+            required: true,
+            default:0
+        },
+        quantity: { 
+            type: Number,
+            required: true,
+        },
+        default:[]    
+        },
+    ],
     ShippingAddress: {
         type: String,
         required: true
@@ -53,7 +46,12 @@ const orderModel = new Schema({
         type: String,
         required: true
     },
-    paymentResult: { paymentResultObj },
+    paymentResult: {
+        type: String,
+        required: true,
+        default: "Pending"
+        // Pending (have not paid), Paid and Cancelled.
+    },
     totalPrice: {
         type: Number,
         required: true,
