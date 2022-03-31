@@ -1,34 +1,55 @@
 import { useNavigate } from 'react-router-dom'
-import {useState} from 'react'
-import axios from 'axios';
+import {useEffect, useState} from 'react'
+import { ReactNotifications } from 'react-notifications-component'
+import { Store } from 'react-notifications-component';
+import 'react-notifications-component/dist/theme.css'
+import {login, userInfo} from '../../../api/userApi'
 
 export default function Login() {
-
+    var result;
+    var path= '';
+    var notify ='warning';
+    var titleNotify='Warning';
+    var messageNotify='Please enter full input'
+    
+    
     const navigate=useNavigate()
-
+    const [state,setState] = useState(true)
     const [formValue, setformValue] = useState({
         userName:'',
-        password: '', 
+        password:'', 
     });
 
-    const handleSubmit = async() => {
-        // store the states in the form data
-        const loginFormData = new FormData();
-        loginFormData.append("userName", formValue.userName)
-        loginFormData.append("password", formValue.password)
-    
-        try {
-        // make axios post request
-        const response = await axios({
-            method: "post",
-            url: "http://localhost:5000/api/user/auth",
-            data: loginFormData,
-            // headers: { "Content-Type": "multipart/form-data" },
-        });
-        } catch(error) {
-        console.log(error)
-        }
-    }
+    useEffect(()=>{
+        (async () => {
+            const res = await login(formValue); 
+            result =res;
+        //    console.log(result.token);
+            // const test = await userInfo(localStorage.getItem('user'))
+            // console.log(localStorage.getItem('user'))
+            if(result === undefined) {
+                notify ='warning'
+                titleNotify="Warning"
+                messageNotify='Please enter full input'
+            }
+        
+            if(result !==undefined) {
+                if(result.message !== undefined) {
+                    notify ='danger'
+                    titleNotify="Login failure"
+                    messageNotify=result.message;      
+                }
+                else if(result.email !== undefined) {
+                    localStorage.setItem("user",result.token);
+                    path ='/'
+                    notify ='success'
+                    titleNotify="Login successful"
+                    messageNotify="Please back to Home page";                  
+                }    
+            }
+
+          })()
+    },[state]);
 
     const handleChange = (event) => {
         setformValue({
@@ -36,11 +57,29 @@ export default function Login() {
         [event.target.name]: event.target.value
         });
     }
+
+       //notify
+       const handleNotify=()=>{
+        Store.addNotification({
+            title: titleNotify,
+            message: messageNotify,
+            type: notify,
+            insert: "top",
+            container: "top-right",
+            animationIn: ["animate__animated", "animate__fadeIn"],
+            animationOut: ["animate__animated", "animate__fadeOut"],
+            dismiss: {
+              duration: 4500,
+              onScreen: true
+            }
+          });
+      } 
     return (
       <>
+      <ReactNotifications/>
         <div className="bg-grey-lighter min-h-screen flex flex-col bg-[url('https://asianfoodnetwork.com/content/dam/afn/global/en/homepage/new-content-carousel/AFN_Food_Made_Good_HK_Awards_good_to_go_award_mobile.jpg.transform/desktop-img/img.jpg')]">
             <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
-                <form onSubmit={handleSubmit} className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+                <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
                     <h1 className="mb-8 text-3xl text-center font-semibold">Sign In</h1>
                     <input 
                         type="text"
@@ -57,6 +96,7 @@ export default function Login() {
                         onChange={handleChange} required />
             
                     <button
+                        onClick={()=>{setState(!state);handleNotify(); navigate(path)}}
                         type="submit"
                         className="w-full text-center py-3 rounded bg-green-500 text-white hover:bg-green-dark focus:outline-none my-1"
                     >Sign In</button>
@@ -67,7 +107,7 @@ export default function Login() {
                             Back To Home
                         </a>
                     </div>
-                </form>
+                </div>
 
                 <div className="text-white mt-6 font-semibold">
                     Don't have an account? 
