@@ -20,6 +20,7 @@ import AddCategory from './components/Pages/Admin/AdminCategory/addCate';
 import AdProduct from './components/Pages/Admin/Product/product';
 import UpdateProduct from './components/Pages/Admin/AdminCategory/updateProduct';
 import AddProduct from './components/Pages/Admin/AdminCategory/addPrd';
+import ProtectRoutes from './ProtectRoutes';
 
 
 
@@ -64,17 +65,22 @@ function App() {
       <Route path="/Product/:id" element={<Product onAdd={onAdd} foodList= {foodList}/>}/>
       <Route path="/SignUp" element={<Signup/>}/>
       <Route path="/info" element={<Info/>}/>
-
+      <Route path="/" element={<Home/>}/>
 
       {/*Admin route */}
-      <Route path="/Login/admin" element={<AdminLogin/>}/>
-      <Route path="/admin" element={<AdminPage/>}/>
-      <Route path="/admin/cate" element={<CateAdmin/>}/>
-      <Route path="/admin/cate/:id" element={<UpdateCategory/>}/>
-      <Route path="/admin/cate/add" element={<AddCategory/>}/>
-      <Route path="/admin/product" element={<AdProduct/>}/>
-      <Route path="/admin/product/:id" element={<UpdateProduct/>}/>
-      <Route path="/admin/product/add" element={<AddProduct/>}/>
+      
+      <Route element={<ProtectRoutes/>}>
+
+        <Route path="/Login/admin" element={<AdminLogin/>}/>
+        <Route path="/admin" element={<AdminPage/>}/>
+        <Route path="/admin/cate" element={<CateAdmin/>}/>
+        <Route path="/admin/cate/:id" element={<UpdateCategory/>}/>
+        <Route path="/admin/cate/add" element={<AddCategory/>}/>
+        <Route path="/admin/product" element={<AdProduct/>}/>
+        <Route path="/admin/product/:id" element={<UpdateProduct/>}/>
+        <Route path="/admin/product/add" element={<AddProduct/>}/>
+      </Route>
+      
 
 
 
@@ -83,7 +89,7 @@ function App() {
 
 
       
-      <Route path="/" element={<Home/>}/>
+      
 
     </Routes>
       </AddContext.Provider>
