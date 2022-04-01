@@ -6,6 +6,8 @@ const authMiddlewares = require('../middlewares/authMiddlewares');
 router.post('/register', userController.registerUser);
 router.post('/auth', userController.authUser);
 router.post('/sendResetEmail', userController.sendResetMail);
+router.post('/reset/:resetToken', userController.resetPass);
+
 router.post('/update/:id', authMiddlewares.protect, userController.updateUser);
 router.get('/', authMiddlewares.protect, userController.getUserProfile);
 

@@ -105,7 +105,7 @@ class UserController {
             }
             var updateUser = await User.findOneAndUpdate({_id: req.params.id}, {
                 name : req.body.name || user.name,
-                userName : req.body.userName || user.userName,
+                userName : user.userName,
                 email : req.body.email || user.email,
                 phoneNumber : req.body.phoneNumber || user.phoneNumber,
                 gender : req.body.gender || user.gender,
@@ -147,7 +147,7 @@ class UserController {
         });
     })
 
- //  [POST - ROUTE: api/user/sendResetEmail ]  
+ //  [POST - ROUTE: api/user/reset/:resetToken ]  
     resetPass = asyncHandler( async (req,res) => {
         var userId = req.params.resetToken;  
         var newPassword = req.body.newPassword;

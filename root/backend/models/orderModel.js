@@ -38,7 +38,7 @@ const orderModel = new Schema({
         default:[]    
         },
     ],
-    ShippingAddress: {
+    shippingAddress: {
         type: String,
         required: true
     },
@@ -51,6 +51,11 @@ const orderModel = new Schema({
         required: true,
         default: "Pending"
         // Pending (have not paid), Paid and Cancelled.
+    },
+    shippingPrice: {
+        type: Number,
+        required: true,
+        default: 0
     },
     totalPrice: {
         type: Number,
