@@ -103,7 +103,7 @@ class UserController {
                 var hashPassword = await  bcrypt.hash(req.body.password,salt);
                 user.password = hashPassword;
             }
-            var updateUser = await User.findOneAndUpdate({_id: req.params.id}, {
+            var updateUser = await User.findOneAndUpdate({_id: user._id}, {
                 name : req.body.name || user.name,
                 userName : user.userName,
                 email : req.body.email || user.email,
