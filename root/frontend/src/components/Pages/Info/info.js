@@ -1,80 +1,135 @@
+
+import { useState,useEffect } from 'react';
+import { ReactNotifications } from 'react-notifications-component'
+import { Store } from 'react-notifications-component';
+import 'react-notifications-component/dist/theme.css'
+import { updateInfo, userInfo } from '../../../api/userApi';
 import Footer from "../../Footer";
 import Header from "../../Header";
 
 
 function Info(){
+
+    var result;
+    
+    var notify ='success'
+    var titleNotify="Update successful"
+    var messageNotify="";
+    const [state,setState]=useState(true);
+    const [info,setInfo]=useState(
+        {
+            name:'',
+            userName:'',
+            email:'',
+            phoneNumber:'',
+            gender:''
+        }
+    );
+    // save text
+    const [formValue, setformValue] = useState({
+        name:'',
+        email:'',
+        phoneNumber:'',
+        gender:'',
+        password:''
+      });
+    //text event
+    const handleChangeText = (event) => {
+        setformValue({
+          ...formValue,
+          [event.target.name]: event.target.value
+        });
+      }
+
+
+    //call api    
+    useEffect(()=>{
+        (async () => {
+            const res = await updateInfo(formValue,localStorage.getItem('user')); 
+            result =res;
+            console.log(result);
+            const info = await userInfo(localStorage.getItem('user'));
+            if(info || info.message=== undefined){
+                setInfo(info);
+            }
+          })()
+    },[state]);
+    
+      //notify
+    const handleNotify=()=>{
+    Store.addNotification({
+        title: titleNotify,
+        message: messageNotify,
+        type: notify,
+        insert: "top",
+        container: "top-right",
+        animationIn: ["animate__animated", "animate__fadeIn"],
+        animationOut: ["animate__animated", "animate__fadeOut"],
+        dismiss: {
+            duration: 4500,
+            onScreen: true
+        }
+        });
+    } 
+
+
     return (
         <>
+        <ReactNotifications/>
         <Header/>
-        <div className="bg-white min-h-screen pt-2 font-mono">
+        <div className="bg-white min-h-screen pt-24 font-mono ">
             <div className="container mx-auto">
                 <div className="inputs w-full max-w-2xl p-6 mx-auto">
-                    <h2 className="text-2xl text-gray-900">Account Setting</h2>
-                    <form className="mt-6 border-t border-gray-400 pt-4">
+                    <div className="mt-6 ">
                         <div className='flex flex-wrap -mx-3 mb-6'>
-                            <div className='w-full md:w-full px-3 mb-6'>
-                                <label className='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' htmlFor='grid-text-1'>email address</label>
-                                <input className='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='text' placeholder='Enter email'  required/>
-                            </div>
-                            <div className='w-full md:w-full px-3 mb-6 '>
-                                <label className='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>password</label>
-                                <button className="appearance-none bg-gray-200 text-gray-900 px-2 py-1 shadow-sm border border-gray-400 rounded-md ">change your password</button>
-                            </div>
-                            <div className='w-full md:w-full px-3 mb-6'>
-                                <label className='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>pick your country</label>
-                                <div className="flex-shrink w-full inline-block relative">
-                                    <select className="block appearance-none text-gray-600 w-full bg-white border border-gray-400 shadow-inner px-4 py-2 pr-8 rounded">
-                                        <option>choose ...</option>
-                                        <option>USA</option>
-                                        <option>France</option>
-                                        <option>Spain</option>
-                                        <option>UK</option>
-                                    </select>
-                                    <div className="pointer-events-none absolute top-0 mt-3  right-0 flex items-center px-2 text-gray-600">
-                                        <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='w-full md:w-full px-3 mb-6'>
-                                <label className='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>fav language</label>
-                                <div className="flex-shrink w-full inline-block relative">
-                                    <select className="block appearance-none text-gray-600 w-full bg-white border border-gray-400 shadow-inner px-4 py-2 pr-8 rounded">
-                                        <option>choose ...</option>
-                                        <option>English</option>
-                                        <option>France</option>
-                                        <option>Spanish</option>
-                                    </select>
-                                    <div className="pointer-events-none absolute top-0 mt-3  right-0 flex items-center px-2 text-gray-600">
-                                        <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="personal w-full border-t border-gray-400 pt-4">
-                                <h2 className="text-2xl text-gray-900">Personal info:</h2>
-                                <div className="flex items-center justify-between mt-4">
-                                    <div className='w-full md:w-1/2 px-3 mb-6'>
-                                        <label className='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' >first name</label>
-                                        <input className='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='text'  required/>
-                                    </div>
-                                    <div className='w-full md:w-1/2 px-3 mb-6'>
-                                        <label className='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' >last name</label>
-                                        <input className='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='text'  required/>
-                                    </div>
+                            <div className="personal w-full pt-4">
+                                <h2 className="text-2xl text-gray-900 pb-4 font-semibold">Personal info:</h2>
+                                <div className='w-full md:w-full px-3 mb-6'>
+                                    <label className='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' >Your name</label>
+                                    <input onChange={handleChangeText}
+                                    name="name"
+                                    defaultValue={info.name}
+                                    className='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='text'/>
                                 </div>
                                 <div className='w-full md:w-full px-3 mb-6'>
-                                    <label className='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>user name</label>
-                                    <input className='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='text'  required/>
+                                    <label className='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' >user name</label>
+                                    <input  defaultValue={info.userName} className='appearance-none block w-full bg-white text-gray-700 border bg-gray-100 border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500 ' type='text' disabled/>
                                 </div>
                                 <div className='w-full md:w-full px-3 mb-6'>
-                                    <label className='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' >Bio</label>
-                                    <textarea className='bg-gray-100 rounded-md border leading-normal resize-none w-full h-20 py-2 px-3 shadow-inner border border-gray-400 font-medium placeholder-gray-700 focus:outline-none focus:bg-white'  required></textarea>
+                                    <label className='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Phone number</label>
+                                    <input  onChange={handleChangeText}
+                                    defaultValue={info.phoneNumber}
+                                    name="phoneNumber"
+                                    className='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='text'/>
                                 </div>
+                                <div className='w-full md:w-full px-3 mb-6'>
+                                    <label className='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Email</label>
+                                    <input  onChange={handleChangeText}
+                                    defaultValue={info.email}
+                                    name="email"
+                                    className='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='text'/>
+                                </div>
+                                <div className='w-full md:w-full px-3 mb-6'>
+                                    <label className='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Password</label>
+                                    <input  onChange={handleChangeText}
+                                    name="password"
+                                    className='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='password'/>
+                                </div>
+                                <div className='w-full md:w-full px-3 mb-6'>
+                                    <label className='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Gender</label>
+                                    <input  onChange={handleChangeText}
+                                    defaultValue={info.gender}
+                                    name="gender"
+                                    className='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='text'/>
+                                </div>
+
                                 <div className="flex justify-end">
-                                    <button className="appearance-none bg-gray-200 text-gray-900 px-2 py-1 shadow-sm border border-gray-400 rounded-md mr-3" type="submit">save changes</button>
+                                    <button onClick={()=>{handleNotify(); setState(!state)}}
+                                    className="appearance-none bg-green-300 text-gray-900 px-2 py-1 shadow-lg hover:bg-green-500 rounded-md mr-3 font-semibold" type="submit">save changes</button>
                                 </div>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>

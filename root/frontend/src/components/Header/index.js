@@ -1,5 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment,useContext } from 'react'
+import { Fragment,useContext,useState,useEffect  } from 'react'
 import { ItemContext } from '../../App'
 import { Popover, Transition } from '@headlessui/react'
 import {
@@ -21,6 +21,7 @@ import {
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { useNavigate } from 'react-router-dom'
 import { AddContext } from "../../App"
+import{userInfo} from '../../api/userApi'
 
 const solutions = [
   {
@@ -59,11 +60,20 @@ function classNames(...classes) {
 export default function Header() {
   const navigate=useNavigate()
   const cartItems= useContext(AddContext);
-  
+  const [name, setName] = useState('');
+  useEffect(() => {
+    (async () => {
+      const res = await userInfo(localStorage.getItem('user')); 
+      if(res.name!== undefined) {
+        setName(res.name);
+      }
+    })();
+  }, []);
+ 
 
   return (
+ 
     
-
     <Popover className="relative bg-white z-10 ">
       <div className="mx-auto px-4 sm:px-6 fixed top-0 right-0 left-0 bg-white z-10">
         <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
@@ -87,41 +97,47 @@ export default function Header() {
           </div>
           <Popover.Group as="nav" className="hidden md:flex space-x-10">
             
-            <a href="#" className="text-lg font-medium text-gray-500 hover:text-gray-900" onClick={()=>{navigate('/')}} >
+            <div className="cursor-pointer text-lg font-medium text-gray-500 hover:text-gray-900" onClick={()=>{navigate('/')}} >
               Home
-            </a>
-            <a href="#" className="text-lg font-medium text-gray-500 hover:text-gray-900" onClick={()=>{navigate('/Menu')}}>
+            </div>
+            <div className="cursor-pointer text-lg font-medium text-gray-500 hover:text-gray-900" onClick={()=>{navigate('/Menu')}}>
               Menu
-            </a>
-            <a href="#" className="text-lg font-medium text-gray-500 hover:text-gray-900" onClick={()=>{navigate('/About')}}>
+            </div>
+            <div className="cursor-pointer text-lg font-medium text-gray-500 hover:text-gray-900" onClick={()=>{navigate('/About')}}>
               About
-            </a>
-            <a href="#" className="text-lg font-medium text-gray-500 hover:text-gray-900" onClick={()=>{navigate('/Contact')}}>
+            </div>
+            <div className="cursor-pointer text-lg font-medium text-gray-500 hover:text-gray-900" onClick={()=>{navigate('/Contact')}}>
               Contact
-            </a>
+            </div>
             
           </Popover.Group>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <a href="#" 
-            className="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-3xl shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700"
+
+            <p className="font-semibold mr-8 text-lg bg-gray-100 rounded-2xl hover:bg-blue-200  cursor-pointer" onClick={()=>{navigate('/info')}}>{name ? `Hello ${name}` : ''}
+            
+            </p>
+
+            <div 
+            className="cursor-pointer whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-3xl shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700"
             onClick={()=>{navigate('/Cart')}}
             >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
               <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
             </svg>
               <div className="rounded-xl bg-red-600 px-2 absolute text-xs mt-3 ml-4">{cartItems.length}</div>
-            </a>
+            </div>
 
-            <a
-              href="#"
-              className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-3xl shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700"
+            <div
+              className="cursor-pointer ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-3xl shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700"
               onClick={()=>{navigate('/Login')}}
             >
              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
             </svg>
 
-            </a>
+            </div>
+           
+
           </div>
         </div>
       </div>

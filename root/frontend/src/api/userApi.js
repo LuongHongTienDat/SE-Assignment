@@ -63,15 +63,38 @@ const register = async(formValue) => {
 
   export const userInfo = async(token) => {
 
-    // if(token === undefined){
-    //     return 
-    // }
+    if(token === undefined){
+        return 
+    }
     try {
       // make axios post request
       const res = await axios({
         method: "get",
         url: "http://localhost:5000/api/user",
         headers: {authorization:token },
+      });
+      return res.data;
+    } catch(error) {
+        return error.response.data;
+    }
+    
+   
+  }
+
+
+  export const updateInfo = async(formValue,token) => {
+
+    if( formValue.name===''){
+        return;
+    }
+
+    try {
+      // make axios post request
+      const res = await axios({
+        method: "patch",
+        url: "http://localhost:5000/api/user/update",
+        data: formValue,
+        headers: {authorization:token},
       });
       return res.data;
     } catch(error) {
