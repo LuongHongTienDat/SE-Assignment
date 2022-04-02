@@ -9,8 +9,6 @@ import Header from "../../Header";
 
 
 function Info(){
-
-    var result;
     
     var notify ='success'
     var titleNotify="Update successful"
@@ -46,8 +44,6 @@ function Info(){
     useEffect(()=>{
         (async () => {
             const res = await updateInfo(formValue,localStorage.getItem('user')); 
-            result =res;
-            console.log(result);
             const info = await userInfo(localStorage.getItem('user'));
             if(info || info.message=== undefined){
                 setInfo(info);

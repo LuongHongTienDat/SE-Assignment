@@ -21,6 +21,7 @@ import AdProduct from './components/Pages/Admin/Product/product';
 import UpdateProduct from './components/Pages/Admin/AdminCategory/updateProduct';
 import AddProduct from './components/Pages/Admin/AdminCategory/addPrd';
 import ProtectRoutes from './ProtectRoutes';
+import ProtectRoutesUser from './ProtectRoutesUser';
 
 
 
@@ -64,14 +65,18 @@ function App() {
       <Route path="/Cart" element={<Cart onRemove={onRemove} />}/>
       <Route path="/Product/:id" element={<Product onAdd={onAdd} foodList= {foodList}/>}/>
       <Route path="/SignUp" element={<Signup/>}/>
-      <Route path="/info" element={<Info/>}/>
+
+      <Route element={<ProtectRoutesUser/>}>
+
+        <Route path="/info" element={<Info/>}/>
+      </Route>
+
       <Route path="/" element={<Home/>}/>
 
       {/*Admin route */}
       
-      <Route element={<ProtectRoutes/>}>
-
         <Route path="/Login/admin" element={<AdminLogin/>}/>
+      <Route element={<ProtectRoutes/>}>
         <Route path="/admin" element={<AdminPage/>}/>
         <Route path="/admin/cate" element={<CateAdmin/>}/>
         <Route path="/admin/cate/:id" element={<UpdateCategory/>}/>
@@ -80,17 +85,7 @@ function App() {
         <Route path="/admin/product/:id" element={<UpdateProduct/>}/>
         <Route path="/admin/product/add" element={<AddProduct/>}/>
       </Route>
-      
-
-
-
-
-
-
-
-      
-      
-
+    
     </Routes>
       </AddContext.Provider>
 
