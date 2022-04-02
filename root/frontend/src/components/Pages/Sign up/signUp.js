@@ -52,7 +52,7 @@ export default function Signup () {
         (async () => {
             const res = await register(formValue); 
             result =res;
-            console.log(result);
+            // console.log(result);
 
             if(result === undefined) {
                 notify ='warning'

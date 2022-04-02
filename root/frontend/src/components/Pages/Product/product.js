@@ -1,5 +1,5 @@
 import {useParams} from 'react-router-dom';
-import { useState} from "react";
+import { useState,useEffect, useContext} from "react";
 import { ReactNotifications } from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
 import { Store } from 'react-notifications-component';
@@ -10,9 +10,12 @@ import { Autoplay} from 'swiper';
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
-import Notification from '../../Notification/notification';
+// import Notification from '../../Notification/notification';
 import Footer from '../../Footer';
 import Header from '../../Header';
+import { userInfo } from '../../../api/userApi';
+import { AddContext } from '../../../App';
+import { updateCart } from '../../../api/cartApi';
 
 
 // fake api data
@@ -61,23 +64,71 @@ const rates = [
     }
 ]
 
-let isLogin = true;
+let isLogin = false;
+let notify ='warning';
+let titleNotify='Add failure';
+let messageNotify='Please login to add to cart'
 
 export default function Product({onAdd,foodList}) {
 
-    // notify when add 
+    const cartItems= useContext(AddContext);
+    
+    const [ food, setFood]= useState({
+      id:0,
+      name:"",
+      image:"",
+      price:0,
+      quantity:""
+    })
     const {id} = useParams();
     const foodId = id;
-    let notify ='warning';
-    let titleNotify='Add failure';
-    let messageNotify='Please login to add to cart'
+   
+     // find item in data
+     let result = foodList.find( ({ id }) => id === parseInt(foodId) );
 
-    if(isLogin){
-      notify='success';
-      titleNotify='Add to your Cart successfully';
-      messageNotify='"Check your cart!';
-    }
+    useEffect(()=>{
 
+      setFood({
+        id:result.id,
+        name: result.name,
+        image: result.image,
+        price: parseInt(result.price),
+        quantity: 1
+      })
+
+      if(isLogin){
+        notify='success';
+        titleNotify='Add to your Cart successfully';
+        messageNotify='"Check your cart!';
+      }
+      
+      (async () => {
+        // const res = await updateCart(food,localStorage.getItem('user')); 
+        const res = await userInfo(localStorage.getItem('user'));
+        // console.log(result);
+
+        if(res === undefined) {
+            isLogin=false;
+            notify ='warning'
+            titleNotify="Add failure"
+            messageNotify='Please login to add to cart'
+        }
+        
+        if(res !==undefined) {
+          if(result.message !== undefined) {
+            isLogin=false;
+            }
+          else if(res.email !== undefined) {
+                isLogin=true;
+                notify ='success'
+                titleNotify="Add success"
+                messageNotify="Go cart to checkout";
+            }    
+        }
+      })()
+    },[])
+
+    // notify when add 
     const handleNotify=()=>{
       Store.addNotification({
         title: titleNotify,
@@ -93,9 +144,7 @@ export default function Product({onAdd,foodList}) {
         }
       })
     } 
-
-    // find item in data
-    let result = foodList.find( ({ id }) => id === parseInt(foodId) );
+ 
     // update status
     const[state,setState] = useState(false);
 
@@ -128,10 +177,11 @@ export default function Product({onAdd,foodList}) {
                         border border-transparent rounded-3xl shadow-sm text-base font-medium text-white bg-green-500 hover:bg-green-600
                         transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110"
                         onClick={()=>{ 
-                            result.isCheck = !result.isCheck;
+                            // result.isCheck = !result.isCheck;
                             setState(!state);
                             handleNotify();
-                            onAdd(result);
+                            if(isLogin){onAdd(food); updateCart(cartItems,localStorage.getItem('user')) }
+                            
                             }}
                         >Order now</button>
                 </div>

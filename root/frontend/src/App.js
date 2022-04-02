@@ -34,19 +34,19 @@ function App() {
     const [cartItems, setCartItems]=useState([]);
 
     function onAdd(product){
-      const exist = cartItems.find(x=>x.id === product.id);
+      const exist = cartItems.find(x=>x.name === product.name);
 
       if(exist){
-          setCartItems(cartItems.map(x=>x.id === product.id ? {...exist, qty: exist.qty+1}: x));
+          setCartItems(cartItems.map(x=>x.id === product.id ? {...exist, quantity: exist.quantity+1}: x));
       }
       else{
-          setCartItems([...cartItems,{...product,qty:1}]);
+          setCartItems([...cartItems,{...product,quantity:1}]);
       }
     }
 
     function onRemove(product) {
       for(var i=0;i<cartItems.length;i++){
-        if(cartItems[i].id ===product.id){
+        if(cartItems[i].name ===product.name){
           cartItems= cartItems.splice(i,1);
           console.log(cartItems);
         }
