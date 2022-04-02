@@ -15,10 +15,10 @@ export default function Card({foodList,state,setState}) {
     if(state ==='popular'){
         foodCate = foodList.filter(e => e.isBestSeller === true);
     }
-    function checkInCart(foodId){
-        if(typeof cartItems ==='undefined')
+    function checkInCart(foodName){
+        if(cartItems ===undefined)
             return false;
-        if(cartItems.find(e => e.id === foodId)){
+        if(cartItems.find(e => e.name === foodName)){
 
             return true;
         }
@@ -78,7 +78,7 @@ export default function Card({foodList,state,setState}) {
                         
                         <div className="flex justify-between items-center">
                             <span className='text-3xl font-bold text-gray-900'>${food.price}</span>
-                            {checkInCart(food.id) && <AddButton></AddButton> ?<CheckButton></CheckButton>:<AddButton></AddButton>}
+                            {checkInCart(food.name) && <AddButton></AddButton> ?<CheckButton></CheckButton>:<AddButton></AddButton>}
                             
                         </div>
                         </div>

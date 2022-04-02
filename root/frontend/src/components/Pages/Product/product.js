@@ -86,6 +86,7 @@ export default function Product({onAdd,foodList}) {
      // find item in data
      let result = foodList.find( ({ id }) => id === parseInt(foodId) );
 
+
     useEffect(()=>{
 
       setFood({
@@ -95,17 +96,16 @@ export default function Product({onAdd,foodList}) {
         price: parseInt(result.price),
         quantity: 1
       })
-
+      // check login
       if(isLogin){
         notify='success';
         titleNotify='Add to your Cart successfully';
         messageNotify='"Check your cart!';
       }
-      
+      // call api
       (async () => {
         // const res = await updateCart(food,localStorage.getItem('user')); 
         const res = await userInfo(localStorage.getItem('user'));
-        // console.log(result);
 
         if(res === undefined) {
             isLogin=false;
@@ -181,7 +181,6 @@ export default function Product({onAdd,foodList}) {
                             setState(!state);
                             handleNotify();
                             if(isLogin){onAdd(food); updateCart(cartItems,localStorage.getItem('user')) }
-                            
                             }}
                         >Order now</button>
                 </div>

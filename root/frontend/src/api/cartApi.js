@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 
-const getCart = async(formValue) => {
+const getCart = async(token) => {
 
-    if( formValue.userName==='' || formValue.password===''){
-        return;
+    if( token === undefined){
+        return undefined;
     }
 
     try {
@@ -12,7 +12,7 @@ const getCart = async(formValue) => {
       const res = await axios({
         method: "get",
         url: "http://localhost:5000/api/cart",
-        headers: { "Content-Type": "application/json" },
+        headers: {authorization:token},
       });
       return res.data;
     } catch(error) {

@@ -1,6 +1,6 @@
 
 import {Routes, Route} from 'react-router-dom';
-import {useState,createContext} from 'react'
+import {useState,createContext,useEffect} from 'react'
 import './App.css';
 import About from './components/Pages/About';
 import Contact from './components/Pages/Contact';
@@ -22,6 +22,7 @@ import UpdateProduct from './components/Pages/Admin/AdminCategory/updateProduct'
 import AddProduct from './components/Pages/Admin/AdminCategory/addPrd';
 import ProtectRoutes from './ProtectRoutes';
 import ProtectRoutesUser from './ProtectRoutesUser';
+import getCart from './api/cartApi';
 
 
 
@@ -33,6 +34,28 @@ function App() {
 
     const [cartItems, setCartItems]=useState([]);
 
+    // update cart by user
+    useEffect(()=>{
+
+      // call api
+      (async () => {
+        
+        const res = await getCart(localStorage.getItem('user'))
+
+        if(res.message!==undefined)
+          setCartItems([]);
+
+        else if(res!==undefined && res.message===undefined){
+            setCartItems(res);
+          }
+
+      })()
+      
+    },[])
+
+    
+
+    
     function onAdd(product){
       const exist = cartItems.find(x=>x.name === product.name);
 
