@@ -90,6 +90,7 @@ getDishes = asyncHandler( async (req,res) => {
                     name : (req.body.name || dish.name),
                     image : (req.body.image || dish.image),
                     dishDetails : (req.body.dishDetails || dish.dishDetails),
+                    dishDescription : (req.body.dishDescription || dish.dishDescription),
                     price : (req.body.price || dish.price),
                     countInStock : (req.body.countInStock || dish.countInStock),
                     category : (req.body.category || dish.category)

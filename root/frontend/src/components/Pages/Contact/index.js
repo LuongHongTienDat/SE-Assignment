@@ -5,27 +5,27 @@ const teamate = [
   {
     name:'Hà Phan Thiên Phú',
     position: 'Founder / CEO',
-    image:'https://gamek.mediacdn.vn/133514250583805952/2021/12/20/17939299-1631633830956-5a524af748005-1640018821731416772953.jpg'
+    image:'https://i.ibb.co/DLGjKkZ/phu.jpg'
   },
   {
-    name:'Hà Phan Thiên Phú',
-    position: 'Founder / CEO',
-    image:'https://gamek.mediacdn.vn/133514250583805952/2021/12/20/17939299-1631633830956-5a524af748005-1640018821731416772953.jpg'
+    name:'Lương Hồng Tiến Đạt',
+    position: 'Co-founder / Chef',
+    image:'https://i.ibb.co/fk5JFCc/dat.jpg'
   },
   {
-    name:'Hà Phan Thiên Phú',
-    position: 'Web Developer',
-    image:'https://gamek.mediacdn.vn/133514250583805952/2021/12/20/17939299-1631633830956-5a524af748005-1640018821731416772953.jpg'
+    name:'Hà Trung Kiên',
+    position: 'Co-founder / Waiter',
+    image:'https://i.ibb.co/sqRMrTx/kien.jpg'
   },
   {
-    name:'Hà Phan Thiên Phú',
-    position: 'Devops Engineer',
-    image:'https://gamek.mediacdn.vn/133514250583805952/2021/12/20/17939299-1631633830956-5a524af748005-1640018821731416772953.jpg'
+    name:'Lý Chánh Tín',
+    position: 'Co-founder / Cashier',
+    image:'https://i.ibb.co/dQ88qBd/tin.png'
   },
   {
-    name:'Hà Phan Thiên Phú',
-    position: 'Founder / CEO',
-    image:'https://gamek.mediacdn.vn/133514250583805952/2021/12/20/17939299-1631633830956-5a524af748005-1640018821731416772953.jpg'
+    name:'Nguyễn Huy Hoàng',
+    position: 'Co-founder / Manager',
+    image:'https://i.ibb.co/w0C5fRk/hoang.jpg'
   },
 ]
 
@@ -51,9 +51,7 @@ export default function Contact() {
             </h2>
 
             <p class="max-w-screen-md mx-auto text-center text-gray-500 md:text-lg">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis
-              perspiciatis omnis aspernatur impedit vel, consectetur laudantium nulla et
-              aliqua
+              This is Luna Eatery, which is founded by a 5-member team. If you want to get our info, guess it by yourself, bye ! 
             </p>
           </div>
 
@@ -66,7 +64,6 @@ export default function Contact() {
               <div class="h-48 mb-2 overflow-hidden rounded-lg shadow-lg md:h-80">
                 <img
                   src={teams.image}
-                  alt="Image"
                   class="object-cover object-center w-full h-full"
                 />
               </div>
