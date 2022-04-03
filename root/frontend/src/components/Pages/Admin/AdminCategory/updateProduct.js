@@ -1,13 +1,13 @@
 import { useNavigate, useParams } from "react-router-dom";
-import foodList from "../../../../data/data";
+import {foodList} from '../Product/product'
 import AdminHeader from "../../../Header/adminHeader";
 import Updateprd from "../../../Update/updatePrd";
 
 function UpdateProduct() {
     const navigate=useNavigate();
-    const {id} = useParams();
-    const foodID=id;
-    let res = foodList.find( ({ id }) => id === parseInt(foodID));
+    const {_id} = useParams();
+    const foodID=_id;
+    let res = foodList.find( ({ _id }) => _id === (foodID));
     return (
         <>
             <div className="min-h-screen md:flex md:flex-row bg-gray-100 ">

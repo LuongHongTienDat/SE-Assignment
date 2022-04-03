@@ -1,44 +1,59 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay,Navigation} from 'swiper';
+import {useEffect} from "react";
 
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
+import { getCate } from '../../../../api/dishApi';
 
-const selectMenu = [
-    {
-        title:'Fast food',
-        type:'fastfood',
-        image:'https://www.seekpng.com/png/full/89-891255_fast-food-png-food.png'
-    },
-    {
-        title:'Sushi',
-        type:'sushi',
-        image:'https://pngimg.com/uploads/sushi/sushi_PNG9202.png'
-    },
-    {
-        title:'Dessert',
-        type:'dessert',
-        image:'https://www.nicepng.com/png/full/95-951391_caramel-pudding-cream-caramel-pudding-png.png'
-    },
-    {
-        title:'Soups',
-        type:'soups',
-        image:'https://salt.tikicdn.com/cache/w1200/ts/product/e4/3b/54/8c56ac7bfc2f45bba05efcde966d9250.png'
-    },
-    {
-        title:'Drinks',
-        type:'drinks',
-        image:'https://shopnguyenlieu.com/wp-content/uploads/2019/09/tradaothachdao-550x467.png'
-    },
-  ]
+// const selectMenu = [
+//     {
+//         title:'Fast food',
+//         type:'fastfood',
+//         image:'https://www.seekpng.com/png/full/89-891255_fast-food-png-food.png'
+//     },
+//     {
+//         title:'Sushi',
+//         type:'sushi',
+//         image:'https://pngimg.com/uploads/sushi/sushi_PNG9202.png'
+//     },
+//     {
+//         title:'Dessert',
+//         type:'dessert',
+//         image:'https://www.nicepng.com/png/full/95-951391_caramel-pudding-cream-caramel-pudding-png.png'
+//     },
+//     {
+//         title:'Soups',
+//         type:'soups',
+//         image:'https://salt.tikicdn.com/cache/w1200/ts/product/e4/3b/54/8c56ac7bfc2f45bba05efcde966d9250.png'
+//     },
+//     {
+//         title:'Drinks',
+//         type:'drinks',
+//         image:'https://shopnguyenlieu.com/wp-content/uploads/2019/09/tradaothachdao-550x467.png'
+//     },
+//   ]
+
+let selectMenu =[];
+
 export default function SelectCard({state,setState}) {
+
+  useEffect(()=>{
+   
+    // call api
+    (async () => {
+      // const res = await updateCart(food,localStorage.getItem('user')); 
+      const res = await getCate();
+      selectMenu=res;
+    })()
+  },[])
     return (
       <>
         <p className="text-2xl font-semibold text-center pt-32"> Options</p>
-
+         
         <Swiper
         modules={[Autoplay,Navigation]}
         spaceBetween={-150}
@@ -63,7 +78,7 @@ export default function SelectCard({state,setState}) {
                 selectMenu.map((menu,index)=>(
                 <SwiperSlide key={index}>
                     <div className="flex flex-col lg:flex-row flex-wrap gap-x-8 gap-y-20 justify-center items-center pt-8 mb-4"
-                    onClick={()=>{setState(menu.type)}}
+                    onClick={()=>{setState(menu.cateName)}}
                     >
 
                     <div className="basis-1/2 h-28 rounded-2xl flex flex-col xl:flex-row items-center justify-center shadow-lg
@@ -72,7 +87,7 @@ export default function SelectCard({state,setState}) {
 
                         <img className="w-24 ml-6 h-24" src={menu.image} alt=""></img>
                         
-                        <p className="mx-auto font-semibold text-xl">{menu.title}</p>
+                        <p className="mx-auto font-semibold text-xl">{menu.cateName}</p>
                         
                     </div>
                     </div>

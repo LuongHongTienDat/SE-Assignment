@@ -285,7 +285,7 @@ let foodList =[
         rating:'',
         numReviews:'',
         reviews:'',
-        dishDescription:'Gà rán vàng ruộm rất bắt mắt, lớp vỏ thì giòn rụm hòa quyện thịt gà mềm ngọt bên trong. Gà rán không cay nên phù hợp cho tất cả các thành viên trong gia đình, đặc biệt là các em nhỏ.',
+        dishDescription:'Burger bò siêu ngon hấp dẫn, lớp banh mềm mại hòa quyện thịt bò mềm ngọt bên trong. Kèm thêm rau xanh nên phù hợp cho tất cả các thành viên trong gia đình, đặc biệt là các em nhỏ.',
         countInStock:'',
         isCheck:false,
         isBestSeller:''

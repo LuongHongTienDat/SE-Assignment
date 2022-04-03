@@ -1,10 +1,23 @@
 import { useNavigate } from 'react-router-dom';
-
+import {useEffect} from 'react'
 import AdminHeader from "../../../Header/adminHeader";
-import foodList from "../../../../data/data";
+// import foodList from "../../../../data/data";
+import getDish from '../../../../api/dishApi';
 
+export   let foodList =[];
 function AdProduct (){
     const navigate=useNavigate();
+
+    useEffect(()=>{
+   
+        // call api
+        (async () => {
+          // const res = await updateCart(food,localStorage.getItem('user')); 
+          const res = await getDish();
+          foodList=res;
+        })()
+      },[])
+
     return (
        <>
            <div className="min-h-screen md:flex md:flex-row bg-gray-100 ">
@@ -20,7 +33,7 @@ function AdProduct (){
                     foodList.map((food,index)=>(
 
                     <div key={index} className="md:basis-1/3 lg:basis-[22%] bg-white p-6 rounded-xl border border-gray-50 hover:bg-blue-100"
-                    onClick={()=>{navigate(`${food.id}`)}}>
+                    onClick={()=>{navigate(`${food._id}`)}}>
                     <div className="flex justify-between items-start">
                         <div className="flex flex-col">
                             <p className="text-xs text-gray-600 tracking-wide">{food.category}</p>
