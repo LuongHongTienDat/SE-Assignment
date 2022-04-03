@@ -3,7 +3,13 @@ const Cate = require('../models/categoryModel');
 const asyncHandler = require('express-async-handler')
 
 class DishController {
-    
+
+//  [ GET - ROUTE: api/dish ]
+getDishes = asyncHandler( async (req,res) => {
+    var dishes = await Dish.find();
+    res.json(dishes);
+})
+
 //  [ GET - ROUTE: api/dish/:id ]
     getDishByID = asyncHandler( async (req,res) => {
         var dish = await Dish.findById(req.params.id);

@@ -7,6 +7,7 @@ router.get('/cate/:cateName', dishController.getDishesByCate);
 router.get('/cate', dishController.getCate);
 
 router.get('/:id', dishController.getDishByID);
+router.get('/', dishController.getDishes);
 router.delete('/:id', authMiddlewares.protect,authMiddlewares.isAdmin, dishController.deleteDish);
 router.post('/:id', authMiddlewares.protect,authMiddlewares.isAdmin, dishController.createDish);
 router.patch('/:id',authMiddlewares.protect,authMiddlewares.isAdmin, dishController.updateDish);
