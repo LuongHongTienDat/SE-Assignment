@@ -13,11 +13,11 @@ const cate =[
     }, 
     {
         cateName:'Drinks',
-        image:'https://pngimg.com/uploads/sushi/sushi_PNG9202.png'
+        image:'https://shopnguyenlieu.com/wp-content/uploads/2019/09/tradaothachdao-550x467.png'
     }, 
     {
         cateName:'Fast food',
-        image:'https://pngimg.com/uploads/sushi/sushi_PNG9202.png'
+        image:'https://www.seekpng.com/png/full/89-891255_fast-food-png-food.png'
     }
 ]
 module.exports = cate;
