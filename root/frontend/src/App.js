@@ -85,12 +85,12 @@ function App() {
       <Route path="/About" element={<About/>}/>
       <Route path="/Contact" element={<Contact/>}/>
       <Route path="/Login" element={<Login/>}/>
-      <Route path="/Cart" element={<Cart onRemove={onRemove} />}/>
+      
       <Route path="/Product/:_id" element={<Product cartItems={cartItems} onAdd={onAdd} foodList= {foodList}/>}/>
       <Route path="/SignUp" element={<Signup/>}/>
 
       <Route element={<ProtectRoutesUser/>}>
-
+        <Route path="/Cart" element={<Cart onRemove={onRemove} />}/>
         <Route path="/info" element={<Info/>}/>
       </Route>
 

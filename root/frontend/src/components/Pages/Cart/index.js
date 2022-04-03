@@ -86,7 +86,7 @@ export default function Cart({onRemove}) {
               <p className="mx-8 mt-4">Payment Method</p>
 
               <div className="mx-4 mt-4 items-center flex">
-                <div className="flex items-center mb-4 border border-green-500 border-2 bg-white rounded-xl mx-8 mt-4 items-center flex">
+                <div className="flex items-center mb-4 border border-green-500 border-2 bg-white rounded-xl mx-8 mt-4 items-center flex w-40">
                   <input id="payment-option-1" type="radio" name="payments" value="USA" 
                   className=" ml-4 w-6 h-6 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 
                   dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" defaultChecked/>
@@ -96,7 +96,7 @@ export default function Cart({onRemove}) {
                   </label>
                 </div>
 
-                <div className="flex items-center mb-4 border border-green-500 border-2 bg-white rounded-xl mx-8 mt-4 items-center flex">
+                <div className="flex items-center mb-4 border border-green-500 border-2 bg-white rounded-xl mx-8 mt-4 items-center flex w-40">
                   <input id="payment-option-2" type="radio" name="payments" value="USA" 
                   className=" ml-4 w-6 h-6 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 
                   dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"/>
