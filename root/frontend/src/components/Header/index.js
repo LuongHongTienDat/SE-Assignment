@@ -69,8 +69,14 @@ export default function Header() {
       }
     })();
   }, []);
- 
-
+  
+  // login./logout text
+  var log1= 'Sign up'
+  var log2='Sign in'
+  var text1 ='Existing customer'
+  if(localStorage.getItem('user')!==null){log1='LogOut';text1='Wellcome';
+  log2 =name;}
+    
   return (
  
     
@@ -163,12 +169,14 @@ export default function Header() {
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
-                <div>
+                <div className='flex'>
                   <img
                     className="h-8 w-auto"
-                    src="https://www.pinclipart.com/picdir/big/86-862588_mobi-food-logo-gif-clipart.png"
-                    alt="Workflow"
+                    src="https://static.wixstatic.com/media/2cd43b_17040a042929442094fd1a2179d5bd29~mv2.png/v1/fill/w_320,h_320,q_90/2cd43b_17040a042929442094fd1a2179d5bd29~mv2.png"
+                    alt="Luna"
                   />
+                <span className="font-bold text-2xl px-2 text-blue-600">Luna Eatery</span>
+                  
                 </div>
                 <div className="-mr-2">
                   <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -195,18 +203,32 @@ export default function Header() {
             <div className="py-6 px-5 space-y-6">
               
               <div>
-                <a
-                  href="#"
-                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700"
+                <div
+                  onClick={()=>{
+                    if(localStorage.getItem('user')===null)
+                    navigate('/Signup')
+                    else{
+                      localStorage.removeItem('user');
+                      navigate('/')
+                    }
+                    }}
+                  className="cursor-pointer w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700"
                 >
-                  Sign up
-                </a>
+                {log1}
+                </div>
 
                 <p className="mt-6 text-center text-base font-medium text-gray-500">
-                  Existing customer?{' '}
-                  <a href="#" className="text-indigo-600 hover:text-indigo-500">
-                    Sign in
-                  </a>
+                  {text1}
+                  <div onClick={()=>{
+                    if(localStorage.getItem('user')===null) {
+                      navigate('/Login')
+                    }
+                    else{
+                      navigate('/info')
+                    }
+                    }} className="cursor-pointer text-indigo-600 hover:text-indigo-500">
+                    {log2}
+                  </div>
                 </p>
               </div>
 

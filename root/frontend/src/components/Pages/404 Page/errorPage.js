@@ -16,7 +16,7 @@ const ErrorPage = () => {
                     <div className="mb-10 md:mb-20 text-gray-600 font-light">
                         <h1 className="font-black uppercase text-3xl lg:text-5xl text-indigo-700 mb-10">404 OOPS</h1>
                         <p className="font-normal text-lg">Page not found</p>
-                        <p className="font-normal text-lg">Sorry we can't find the page</p>
+                        <p className="font-normal text-lg">Sorry we can't find the page, Please try again or login to continue.</p>
                     </div>
                     <div className="mb-20 md:mb-0">
                         <button onClick={()=>{navigate('/')}} className="text-2xl font-semibold outline-none focus:outline-none transform transition-all hover:scale-110 text-blue-500 hover:text-blue-600">Back to home</button>

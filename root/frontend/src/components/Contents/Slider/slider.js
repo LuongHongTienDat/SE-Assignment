@@ -2,6 +2,9 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay,Pagination} from 'swiper';
 import beepsteak from '../../../images/beefsteak.png'
+import salad from '../../../images/salad.png'
+import salad2 from '../../../images/salad2.png'
+
 
 // Import Swiper styles
 import 'swiper/css';
@@ -12,8 +15,8 @@ const sliderList = [
   {
   id:1,
   content :'THE BEST CUISINE AWAITS YOUS',
-  secondaryContent :'Welcome!',
-  thirContent :'To my food',
+  secondaryContent :'Beefsteak',
+  thirContent :'Delicious!',
   discount :'20% | DISCOUNT UPON',
   buttonContent:'Register',
   image:beepsteak
@@ -22,11 +25,11 @@ const sliderList = [
   {
   id:2,
   content :'THE BEST CUISINE AWAITS YOUS',
-  secondaryContent :'Welcome!',
-  thirContent :'To my food',
+  secondaryContent :'Best food',
+  thirContent :'Healthy food',
   discount :'20% | DISCOUNT UPON',
   buttonContent:'Register',
-  image:'https://shibares.herokuapp.com/images/home-img-2.png'
+  image:salad
   },
 
   {
@@ -36,7 +39,7 @@ const sliderList = [
     thirContent :'To my food',
     discount :'20% | DISCOUNT UPON',
     buttonContent:'Register',
-    image:'https://shibares.herokuapp.com/images/home-img-2.png'
+    image:salad2
   },
     
 ]

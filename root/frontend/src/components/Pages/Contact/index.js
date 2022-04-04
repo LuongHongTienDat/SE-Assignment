@@ -5,27 +5,33 @@ const teamate = [
   {
     name:'Hà Phan Thiên Phú',
     position: 'Founder / CEO',
-    image:'https://i.ibb.co/DLGjKkZ/phu.jpg'
+    image:'https://i.ibb.co/DLGjKkZ/phu.jpg',
+    facebook:"https://www.facebook.com/thin.phiu/"
   },
   {
     name:'Lương Hồng Tiến Đạt',
     position: 'Co-founder / Chef',
-    image:'https://i.ibb.co/fk5JFCc/dat.jpg'
+    image:'https://i.ibb.co/fk5JFCc/dat.jpg',
+    facebook:'https://www.facebook.com/tiendatluonghong'
   },
   {
     name:'Hà Trung Kiên',
     position: 'Co-founder / Waiter',
-    image:'https://i.ibb.co/sqRMrTx/kien.jpg'
+    image:'https://i.ibb.co/sqRMrTx/kien.jpg',
+    facebook:'https://www.facebook.com/profile.php?id=100009623600721'
+
   },
   {
     name:'Lý Chánh Tín',
     position: 'Co-founder / Cashier',
-    image:'https://i.ibb.co/dQ88qBd/tin.png'
+    image:'https://i.ibb.co/dQ88qBd/tin.png',
+    facebook:'https://www.facebook.com/tin.lychanh'
   },
   {
     name:'Nguyễn Huy Hoàng',
     position: 'Co-founder / Manager',
-    image:'https://i.ibb.co/w0C5fRk/hoang.jpg'
+    image:'https://i.ibb.co/w0C5fRk/hoang.jpg',
+    facebook:'https://www.facebook.com/hoang.nguyen030902'
   },
 ]
 
@@ -35,10 +41,10 @@ export default function Contact() {
       <>
       <Header/>
 
-        <div class="max-w-screen-xl px-4 mx-auto md:px-8 pt-32">
-          <div class="mb-10 md:mb-16">
+        <div className="max-w-screen-xl px-4 mx-auto md:px-8 pt-32">
+          <div className="mb-10 md:mb-16">
             <h2
-              class="
+              className="
                 mb-4
                 text-2xl
                 font-bold
@@ -50,35 +56,35 @@ export default function Contact() {
               Our Team Section
             </h2>
 
-            <p class="max-w-screen-md mx-auto text-center text-gray-500 md:text-lg">
-              This is Luna Eatery, which is founded by a 5-member team. If you want to get our info, guess it by yourself, bye ! 
+            <p className="max-w-screen-md mx-auto text-center text-gray-500 md:text-lg">
+              This is Luna Eatery, which is founded by a 5-member team. If you want to get our info, click on the icon bellow, bye ! 
             </p>
           </div>
 
-          <div class="grid gap-4 md:grid-cols-3 justify-center items-center">
+          <div className="grid gap-4 md:grid-cols-3 justify-center items-center">
 
             {
               teamate.map((teams)=>(
 
-            <div class="p-4 shadow">
-              <div class="h-48 mb-2 overflow-hidden rounded-lg shadow-lg md:h-80">
+            <div className="p-4 shadow">
+              <div className="h-48 mb-2 overflow-hidden rounded-lg shadow-lg md:h-80">
                 <img
                   src={teams.image}
-                  class="object-cover object-center w-full h-full"
+                  className="object-cover object-center w-full h-full"
                 />
               </div>
 
-              <div class="flex flex-col items-center justify-center">
-                <div class="font-bold text-indigo-500 md:text-lg">{teams.name}</div>
-                <p class="mb-3 text-sm text-gray-500 md:text-base md:mb-4">
+              <div className="flex flex-col items-center justify-center">
+                <div className="font-bold text-indigo-500 md:text-lg">{teams.name}</div>
+                <p className="mb-3 text-sm text-gray-500 md:text-base md:mb-4">
                   {teams.position}
                 </p>
 
-                <div class="flex">
-                  <div class="flex gap-4">
-                    <a href="#">
+                <div className="flex">
+                  <div className="flex gap-4">
+                    <a rel="noopener noreferrer" href={teams.facebook}>
                       <svg
-                        class="w-6 h-6 text-blue-600 fill-current"
+                        className="w-6 h-6 text-blue-600 fill-current"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                       >
@@ -87,9 +93,9 @@ export default function Contact() {
                         />
                       </svg>
                     </a>
-                    <a href="#">
+                    <div className="cursor-pointer">
                       <svg
-                        class="w-6 h-6 text-blue-300 fill-current"
+                        className="w-6 h-6 text-blue-300 fill-current"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                       >
@@ -97,10 +103,10 @@ export default function Contact() {
                           d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
                         />
                       </svg>
-                    </a>
-                    <a href="#">
+                    </div>
+                    <div className="cursor-pointer">
                       <svg
-                        class="w-6 h-6 text-blue-500 fill-current"
+                        className="w-6 h-6 text-blue-500 fill-current"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 448 512"
                       >
@@ -108,7 +114,7 @@ export default function Contact() {
                           d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
                         ></path>
                       </svg>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
