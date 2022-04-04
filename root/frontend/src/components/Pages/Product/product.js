@@ -69,10 +69,10 @@ let notify ='warning';
 let titleNotify='Add failure';
 let messageNotify='Please login to add to cart'
 
-export default function Product({onAdd,foodList}) {
+export default function Product({onAdd,foodList,cartItems}) {
 
-    const cartItems= useContext(AddContext);
-    
+     // update status
+    const[state,setState] = useState(false);
     const [ food, setFood]= useState({
       id:0,
       name:"",
@@ -80,12 +80,11 @@ export default function Product({onAdd,foodList}) {
       price:0,
       quantity:""
     })
-    const {id} = useParams();
-    const foodId = id;
+    const {_id} = useParams();
+    const foodId = _id;
    
      // find item in data
-     let result = foodList.find( ({ id }) => id === parseInt(foodId) );
-
+     let result = foodList.find( ({ _id }) => _id === (foodId) );
 
     useEffect(()=>{
 
@@ -96,6 +95,7 @@ export default function Product({onAdd,foodList}) {
         price: parseInt(result.price),
         quantity: 1
       })
+      
       // check login
       if(isLogin){
         notify='success';
@@ -145,8 +145,7 @@ export default function Product({onAdd,foodList}) {
       })
     } 
  
-    // update status
-    const[state,setState] = useState(false);
+   
 
 
     return (
@@ -177,10 +176,10 @@ export default function Product({onAdd,foodList}) {
                         border border-transparent rounded-3xl shadow-sm text-base font-medium text-white bg-green-500 hover:bg-green-600
                         transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110"
                         onClick={()=>{ 
-                            // result.isCheck = !result.isCheck;
-                            setState(!state);
+                          
+                          if(isLogin){ onAdd(food); ;setState(!state);updateCart(cartItems,localStorage.getItem('user'));}
                             handleNotify();
-                            if(isLogin){onAdd(food); updateCart(cartItems,localStorage.getItem('user')) }
+                            
                             }}
                         >Order now</button>
                 </div>

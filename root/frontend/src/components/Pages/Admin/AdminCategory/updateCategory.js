@@ -1,13 +1,14 @@
 import { useNavigate, useParams } from "react-router-dom";
 import AdminHeader from "../../../Header/adminHeader";
-import { cate } from "../../../../data/data";
+import {cate} from '../AdminPage/adminPage'
+
 import UpdateCate from "../../../Update/updateCate";
 
 function UpdateCategory () {
     const navigate=useNavigate();
-    const {id} = useParams();
-    const cateID=id;
-    let res = cate.find( ({ id }) => id === parseInt(cateID));
+    const {_id} = useParams();
+    const cateID=_id;
+    let res = cate.find( ({ _id }) => _id === cateID);
 
     return (
        <>
@@ -15,10 +16,10 @@ function UpdateCategory () {
             <AdminHeader/>
 
             <UpdateCate res={res}/>
-            
+
         </div>
-        
-     
+
+
        </>
     );
 }

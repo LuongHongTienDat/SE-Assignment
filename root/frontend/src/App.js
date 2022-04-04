@@ -8,7 +8,7 @@ import Login from './components/Pages/Login';
 import Menu from './components/Pages/Menu';
 import Cart from './components/Pages/Cart';
 import Product from './components/Pages/Product/product';
-import foodList from './data/data'
+// import foodList from './data/data'
 import Signup from './components/Pages/Sign up/signUp';
 import AdminLogin from './components/Pages/Admin/AdminLogin/adminLogin';
 import AdminPage from './components/Pages/Admin/AdminPage/adminPage';
@@ -23,13 +23,14 @@ import AddProduct from './components/Pages/Admin/AdminCategory/addPrd';
 import ProtectRoutes from './ProtectRoutes';
 import ProtectRoutesUser from './ProtectRoutesUser';
 import getCart from './api/cartApi';
+import getDish from './api/dishApi';
 
 
 
 
 
 export const AddContext = createContext();
-
+let foodList
 function App() {
 
     const [cartItems, setCartItems]=useState([]);
@@ -41,7 +42,8 @@ function App() {
       (async () => {
         
         const res = await getCart(localStorage.getItem('user'))
-
+        const food = await getDish(localStorage.getItem('user'));
+        foodList=food;
         if(res.message!==undefined)
           setCartItems([]);
 
@@ -52,8 +54,6 @@ function App() {
       })()
       
     },[])
-
-    
 
     
     function onAdd(product){
@@ -70,7 +70,7 @@ function App() {
     function onRemove(product) {
       for(var i=0;i<cartItems.length;i++){
         if(cartItems[i].name ===product.name){
-          cartItems= cartItems.splice(i,1);
+          setCartItems(cartItems.splice(i,1)); 
           console.log(cartItems);
         }
       }
@@ -85,12 +85,12 @@ function App() {
       <Route path="/About" element={<About/>}/>
       <Route path="/Contact" element={<Contact/>}/>
       <Route path="/Login" element={<Login/>}/>
-      <Route path="/Cart" element={<Cart onRemove={onRemove} />}/>
-      <Route path="/Product/:id" element={<Product onAdd={onAdd} foodList= {foodList}/>}/>
+      
+      <Route path="/Product/:_id" element={<Product cartItems={cartItems} onAdd={onAdd} foodList= {foodList}/>}/>
       <Route path="/SignUp" element={<Signup/>}/>
 
       <Route element={<ProtectRoutesUser/>}>
-
+        <Route path="/Cart" element={<Cart onRemove={onRemove} />}/>
         <Route path="/info" element={<Info/>}/>
       </Route>
 
@@ -102,10 +102,10 @@ function App() {
       <Route element={<ProtectRoutes/>}>
         <Route path="/admin" element={<AdminPage/>}/>
         <Route path="/admin/cate" element={<CateAdmin/>}/>
-        <Route path="/admin/cate/:id" element={<UpdateCategory/>}/>
+        <Route path="/admin/cate/:_id" element={<UpdateCategory/>}/>
         <Route path="/admin/cate/add" element={<AddCategory/>}/>
         <Route path="/admin/product" element={<AdProduct/>}/>
-        <Route path="/admin/product/:id" element={<UpdateProduct/>}/>
+        <Route path="/admin/product/:_id" element={<UpdateProduct/>}/>
         <Route path="/admin/product/add" element={<AddProduct/>}/>
       </Route>
     

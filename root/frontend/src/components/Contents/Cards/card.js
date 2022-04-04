@@ -56,7 +56,7 @@ export default function Card({foodList,state,setState}) {
                         onClick={()=>{
                             // food.isCheck = !food.isCheck;
                             // setState(!state)
-                            navigate(`/Product/${food.id}`)
+                            navigate(`/Product/${food._id}`)
                         }}
                         >
 

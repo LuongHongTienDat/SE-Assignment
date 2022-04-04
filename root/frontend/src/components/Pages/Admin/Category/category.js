@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import AdminHeader from '../../../Header/adminHeader';
-import { cate } from '../../../../data/data';
+import {cate} from '../AdminPage/adminPage'
+
 
 function CateAdmin () {
     const navigate=useNavigate();
@@ -21,7 +22,7 @@ function CateAdmin () {
                     cate.map((category,index)=>(
 
                     <div key={index} className="md:basis-1/3 lg:basis-[22%] bg-white p-6 rounded-xl border border-gray-50 hover:bg-blue-100"
-                    onClick={()=>{navigate(`${category.id}`)}}>
+                    onClick={()=>{navigate(`${category._id}`)}}>
                     <div className="flex justify-between items-start">
                         <div className="flex flex-col">
                             <p className="text-xs text-gray-600 tracking-wide">Category</p>
