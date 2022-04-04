@@ -162,7 +162,7 @@ const dish =[
         rating:4,
         numReviews:0,
         reviews:[],
-        dishDescription:'Thức uống giúp bạn tăng cường thể lực như khi Nga đánh Ukraine',
+        dishDescription:'Drinks to help you strengthen your fitness!',
         countInStock:5,
         isBestSeller:true
     },
