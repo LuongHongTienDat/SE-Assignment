@@ -52,7 +52,7 @@ export default function Card({foodList,state,setState}) {
                 foodCate.map((food)=>(
 
                     <div key ={food.id} class="basis-1/5 rounded-lg flex flex-col xl:flex-row items-center justify-center bg-gray-100 
-                                w-52 md:max-w-xl md:max-h-xl transition ease-in-out hover:-translate-y-1 hover:scale-110 shadow-lg hover:bg-gray-200"
+                                w-52 h-64 md:max-w-xl md:max-h-xl transition ease-in-out hover:-translate-y-1 hover:scale-110 shadow-lg hover:bg-gray-200"
                         onClick={()=>{
                             // food.isCheck = !food.isCheck;
                             // setState(!state)

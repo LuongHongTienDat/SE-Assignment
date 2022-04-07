@@ -11,7 +11,7 @@ const dish =[
         reviews:[],
         dishDescription:'Including 4 kinds of sushi : Salmon Sushi, Cali Roll Sushi,Salmon Skin Roll Sushi, Salmon Roll Sushi.',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Oshizushi',
@@ -25,7 +25,7 @@ const dish =[
         reviews:[],
         dishDescription:'Made by layers named Neta and Shari, the Neta layer includes fish and seafood such as mackerel or salmon; with this unique shape, Oshizushi is often chosen to be enjoyed with Bento rice or given as a gift.',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Tempura',
@@ -39,7 +39,7 @@ const dish =[
         reviews:[],
         dishDescription:'This is a signatured food which strongly contributed to the spread of Japanese food around the world. Beside Sushi, Tempura “awakens” all users’ senses by sophistication, harmony and richness in taste.',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Chirashizushi',
@@ -52,7 +52,7 @@ const dish =[
         numReviews:0,
         reviews:[],
         dishDescription:'Chirashizushi is a bowl of rice with a variety of ingredients, with the Neta which is made from popular seafood such as salmon, squid, boiled shrimp, and chopped fried eggs and cucumbers. Similar to Kaisendon (seafood rice); the difference between two dishes is that Chirashizushi uses Shari - Sushi rice mixed with vinegar, Kaisendon uses steamed white rice.',
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Gukan Maki',
@@ -66,7 +66,7 @@ const dish =[
         reviews:[],
         dishDescription:'The dish is made by wrapping a wide strip of Nori around a handful of rice while leaving enough space at the top to fit the head with different Neta fillings.',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Pumpkin soup',
@@ -111,10 +111,10 @@ const dish =[
         isBestSeller:true
     },
     {
-        name:'Camellia leaf with snow fungus and shredded chicken soup',
+        name:'Camellia leaf',
         image:'https://product.hstatic.net/1000206480/product/sup_la_cam_d831f3ab2d9d49d78eb350b252c1aa23_1024x1024.png',
         category:'Soups',
-        dishDetails:'With the cool sweetness from boiled chicken broth, snow fungus are rich in nutrition.',
+        dishDetails:'the cool sweetness from boiled chicken broth, snow fungus are rich in nutrition.',
         price: 199000,
         countRating:5,
         rating:4,
@@ -122,7 +122,7 @@ const dish =[
         reviews:[],
         dishDescription:'Camellia leaf with snow fungus and shredded chicken soup is a unique combination of many ingredients. With the sweet and cool taste from boiled chicken broth, the nutritious fragrant snow fungus has a chewy texure that is quite pleasant to eat.',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Coca-Cola',
@@ -136,7 +136,7 @@ const dish =[
         reviews:[],
         dishDescription:'CocaCola original taste.',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Peach tea',
@@ -150,7 +150,7 @@ const dish =[
         reviews:[],
         dishDescription:'When the temperature in Saigon approaches the 40- figure,the chilled peach tea suddenly becomes a lifesaver.',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Vodka',
@@ -164,7 +164,7 @@ const dish =[
         reviews:[],
         dishDescription:'Drinks to help you strengthen your fitness!',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Pepsi',
@@ -178,7 +178,7 @@ const dish =[
         reviews:[],
         dishDescription:'If you are not an original Coca fan, you already have the original Pepsi.',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Coconut cream',
@@ -220,7 +220,7 @@ const dish =[
         reviews:[],
         dishDescription:'Serve cold by chilling in the refrigerator before serving. The cake is poured onto a plate so that the part with the brown sugar on the cake turns up.',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Fried chicken',
@@ -276,7 +276,7 @@ const dish =[
         reviews:[],
         dishDescription:'The potato chips are crispy outside, soft and delicious inside!!',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
 ]
 

@@ -24,13 +24,14 @@ import ProtectRoutes from './ProtectRoutes';
 import ProtectRoutesUser from './ProtectRoutesUser';
 import getCart from './api/cartApi';
 import getDish from './api/dishApi';
+import ErrorPage from './components/Pages/404 Page/errorPage';
 
 
 
 
 
 export const AddContext = createContext();
-let foodList
+let foodList=[];
 function App() {
 
     const [cartItems, setCartItems]=useState([]);
@@ -89,16 +90,18 @@ function App() {
       <Route path="/Product/:_id" element={<Product cartItems={cartItems} onAdd={onAdd} foodList= {foodList}/>}/>
       <Route path="/SignUp" element={<Signup/>}/>
 
-      <Route element={<ProtectRoutesUser/>}>
+      <Route element={<ProtectRoutesUser/>}> 
         <Route path="/Cart" element={<Cart onRemove={onRemove} />}/>
         <Route path="/info" element={<Info/>}/>
       </Route>
 
-      <Route path="/" element={<Home/>}/>
+      <Route path="/" element={<Home foodList={foodList}/>}/>
+      <Route path="*" element={<ErrorPage/>}/>
+
 
       {/*Admin route */}
       
-        <Route path="/Login/admin" element={<AdminLogin/>}/>
+      <Route path="/Login/admin" element={<AdminLogin/>}/>
       <Route element={<ProtectRoutes/>}>
         <Route path="/admin" element={<AdminPage/>}/>
         <Route path="/admin/cate" element={<CateAdmin/>}/>

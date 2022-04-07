@@ -5,19 +5,17 @@ import Footer from "../../Footer/";
 import Header from "../../Header";
 import dish from "../../../images/dishfood.png";
 import chef from "../../../images/chef.png";
-import foodList from '../../../data/data';
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
+import getDish from "../../../api/dishApi";
 
+//
 
-
-export default function Home() {
-     const [state, setstate] = useState('popular');
+export default function Home({foodList}) {
+    const [state, setstate] = useState('popular');
     return (
       <>
 
     <Header/>
-    
-  
      <Slider></Slider>
      <Category></Category>
      <Card foodList={foodList} state={state} ></Card>
