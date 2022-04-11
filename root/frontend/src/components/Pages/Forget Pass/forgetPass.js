@@ -17,7 +17,7 @@ const Forgetpass = () => {
                         />
 
                     <button
-                        onClick={()=>{}}
+                        onClick={()=>{navigate('/sendSuccess')}}
                         type="submit"
                         className="w-full text-center py-3 rounded bg-green-500 text-white hover:bg-green-dark focus:outline-none my-1"
                     >Send email</button>
