@@ -36,26 +36,26 @@ const selectMenu = [
 
 let cate ='all';
 let foodList=[];
-export default function Menu() {
+export default function Menu({foodList,cateList}) {
 
 
     const [state, setState] = useState(cate);
 
-    useEffect(()=>{
+    // useEffect(()=>{
    
-      // call api
-      (async () => {
-        // const res = await updateCart(food,localStorage.getItem('user')); 
-        const res = await getDish();
-        foodList=res;
-      })()
-    },[])
+    //   // call api
+    //   (async () => {
+    //     // const res = await updateCart(food,localStorage.getItem('user')); 
+    //     const res = await getDish();
+    //     foodList=res;
+    //   })()
+    // },[])
 
 
     return (
       <>
         <Header></Header>
-        <SelectCard state={state} setState={setState}/>
+        <SelectCard cateList={cateList} state={state} setState={setState}/>
         <Card foodList={foodList} state={state} setState={setState}/>
         <Footer/>
       </>

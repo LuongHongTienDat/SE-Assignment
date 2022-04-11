@@ -47,6 +47,18 @@ export default function Footer() {
 					<li>
 						<a rel="noopener noreferrer" href="https://www.facebook.com/thin.phiu/" className='font-medidum hover:text-green-500'>Hà Phan Thiên Phú</a>
 					</li>
+					<li>
+						<a rel="noopener noreferrer" href="https://www.facebook.com/thin.phiu/" className='font-medidum hover:text-green-500'>Lương Hồng Tiến Đạt</a>
+					</li>
+					<li>
+						<a rel="noopener noreferrer" href="https://www.facebook.com/thin.phiu/" className='font-medidum hover:text-green-500'>Hà Trung Kiên</a>
+					</li>
+					<li>
+						<a rel="noopener noreferrer" href="https://www.facebook.com/thin.phiu/" className='font-medidum hover:text-green-500'>Nguyễn Huy Hoàng</a>
+					</li>
+					<li>
+						<a rel="noopener noreferrer" href="https://www.facebook.com/thin.phiu/" className='font-medidum hover:text-green-500'>Lý Chánh Tín</a>
+					</li>
 				</ul>
 			</div>
 			<div className="space-y-3">

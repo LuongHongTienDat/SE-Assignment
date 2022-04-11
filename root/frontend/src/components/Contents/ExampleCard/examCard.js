@@ -5,19 +5,19 @@ const categories =[
     {   
         id:1,
         name:'Sushi',
-        description:'Combo sushi 4 thuyền dành cho 2 người',
+        description:'4 Combo Sushi for 2 people. Get closer to your love!',
         image:'https://pngimg.com/uploads/sushi/sushi_PNG9202.png'
     },
     {
         id:2,
         name:'Fast Food',
-        description:'Các món thức ăn nhanh ưa thích của mọi nhà',
+        description:'Favorite fastfood for everyone. Delicious and fast',
         image:'https://www.seekpng.com/png/full/89-891255_fast-food-png-food.png'
     },
     {
         id:3,
         name:'Drink',
-        description:'Các loại thức uống thơm ngon, mát lành',
+        description:'Cool drink, so cool for a hot day',
         image:'https://shopnguyenlieu.com/wp-content/uploads/2019/09/tradaothachdao-550x467.png'
     },
 
@@ -34,7 +34,7 @@ export default function Category() {
                 { 
                     categories.map((category)=>(
                 <>
-                    <div key ={category.id} className="basis-1/4 flex flex-col items-center bg-white rounded-2xl border shadow-md 
+                    <div key ={category.id} className="h-40 basis-1/4 flex flex-col items-center bg-white rounded-2xl border shadow-md 
                                 xl:flex-row md:max-w-xl hover:bg-gray-100 transition ease-in-out hover:-translate-y-1 hover:scale-110 cursor-pointer"
                                 onClick={()=>{navigate('/Menu');}}>
                                 

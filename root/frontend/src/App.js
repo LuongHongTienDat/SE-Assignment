@@ -23,7 +23,7 @@ import AddProduct from './components/Pages/Admin/AdminCategory/addPrd';
 import ProtectRoutes from './ProtectRoutes';
 import ProtectRoutesUser from './ProtectRoutesUser';
 import getCart from './api/cartApi';
-import getDish from './api/dishApi';
+import getDish, { getCate } from './api/dishApi';
 import ErrorPage from './components/Pages/404 Page/errorPage';
 
 
@@ -32,6 +32,7 @@ import ErrorPage from './components/Pages/404 Page/errorPage';
 
 export const AddContext = createContext();
 let foodList=[];
+let cateList =[];
 function App() {
 
     const [cartItems, setCartItems]=useState([]);
@@ -44,6 +45,8 @@ function App() {
         
         const res = await getCart(localStorage.getItem('user'))
         const food = await getDish(localStorage.getItem('user'));
+        const cate = await getCate();
+        cateList = cate;
         foodList=food;
         if(res.message!==undefined)
           setCartItems([]);
@@ -82,7 +85,7 @@ function App() {
       <AddContext.Provider value={cartItems}>
     <Routes>
 
-      <Route path="/Menu" element={<Menu/>}/>
+      <Route path="/Menu" element={<Menu foodList={foodList} cateList ={cateList}/>}/>
       <Route path="/About" element={<About/>}/>
       <Route path="/Contact" element={<Contact/>}/>
       <Route path="/Login" element={<Login/>}/>

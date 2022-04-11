@@ -37,19 +37,19 @@ import { getCate } from '../../../../api/dishApi';
 //     },
 //   ]
 
-let selectMenu =[];
+// let selectMenu =[];
 
-export default function SelectCard({state,setState}) {
+export default function SelectCard({cateList,state,setState}) {
 
-  useEffect(()=>{
+  // useEffect(()=>{
    
-    // call api
-    (async () => {
-      // const res = await updateCart(food,localStorage.getItem('user')); 
-      const res = await getCate();
-      selectMenu=res;
-    })()
-  },[])
+  //   // call api
+  //   (async () => {
+  //     // const res = await updateCart(food,localStorage.getItem('user')); 
+  //     const res = await getCate();
+  //     selectMenu=res;
+  //   })()
+  // },[])
     return (
       <>
         <p className="text-2xl font-semibold text-center pt-32"> Options</p>
@@ -75,7 +75,7 @@ export default function SelectCard({state,setState}) {
         
         >
             {
-                selectMenu.map((menu,index)=>(
+                cateList.map((menu,index)=>(
                 <SwiperSlide key={index}>
                     <div className="flex flex-col lg:flex-row flex-wrap gap-x-8 gap-y-20 justify-center items-center pt-8 mb-4"
                     onClick={()=>{setState(menu.cateName)}}
