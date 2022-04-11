@@ -25,6 +25,8 @@ import ProtectRoutesUser from './ProtectRoutesUser';
 import getCart from './api/cartApi';
 import getDish, { getCate } from './api/dishApi';
 import ErrorPage from './components/Pages/404 Page/errorPage';
+import Forgetpass from './components/Pages/Forget Pass/forgetPass';
+import Sendsuccess from './components/Pages/Forget Pass/sendSuccess';
 
 
 
@@ -89,6 +91,8 @@ function App() {
       <Route path="/About" element={<About/>}/>
       <Route path="/Contact" element={<Contact/>}/>
       <Route path="/Login" element={<Login/>}/>
+      <Route path="/ForgetPass" element={<Forgetpass/>}/>
+      <Route path="/sendSuccess" element={<Sendsuccess/>}/>
       
       <Route path="/Product/:_id" element={<Product cartItems={cartItems} onAdd={onAdd} foodList= {foodList}/>}/>
       <Route path="/SignUp" element={<Signup/>}/>

@@ -106,6 +106,14 @@ export default function Login() {
                         <a className="no-underline border-b border-grey-dark text-md text-grey-dark text-green-700 font-semibold" href="#"  onClick={()=>{navigate('/')}}>
                             Back To Home
                         </a>
+
+                    </div>
+
+                    <div className="text-center text-sm text-grey-dark mt-4">
+  
+                        <a className="no-underline border-b border-grey-dark text-md text-grey-dark text-blue-700 font-semibold" href="#"  onClick={()=>{navigate('/ForgetPass')}}>
+                            Or Reset Password Here
+                        </a>
                     </div>
                 </div>
 
@@ -114,9 +122,7 @@ export default function Login() {
                     <a className="no-underline border-b border-blue text-blue-500 font-semibold" href="#" onClick={()=>{navigate('/Signup')}}>
                         Create Account
                     </a>.
-
                 </div>
-                
 
             </div>
         </div>
