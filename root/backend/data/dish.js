@@ -111,7 +111,7 @@ const dish =[
         isBestSeller:true
     },
     {
-        name:'Camellia leaf with snow fungus and shredded chicken soup',
+        name:'Shredded chicken soup',
         image:'https://product.hstatic.net/1000206480/product/sup_la_cam_d831f3ab2d9d49d78eb350b252c1aa23_1024x1024.png',
         category:'Soups',
         dishDetails:'With the cool sweetness from boiled chicken broth, snow fungus are rich in nutrition.',
