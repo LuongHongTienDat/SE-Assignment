@@ -11,7 +11,7 @@ const dish =[
         reviews:[],
         dishDescription:'Including 4 kinds of sushi : Salmon Sushi, Cali Roll Sushi,Salmon Skin Roll Sushi, Salmon Roll Sushi.',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Oshizushi',
@@ -25,7 +25,7 @@ const dish =[
         reviews:[],
         dishDescription:'Made by layers named Neta and Shari, the Neta layer includes fish and seafood such as mackerel or salmon; with this unique shape, Oshizushi is often chosen to be enjoyed with Bento rice or given as a gift.',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Tempura',
@@ -39,7 +39,7 @@ const dish =[
         reviews:[],
         dishDescription:'This is a signatured food which strongly contributed to the spread of Japanese food around the world. Beside Sushi, Tempura “awakens” all users’ senses by sophistication, harmony and richness in taste.',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Chirashizushi',
@@ -66,7 +66,7 @@ const dish =[
         reviews:[],
         dishDescription:'The dish is made by wrapping a wide strip of Nori around a handful of rice while leaving enough space at the top to fit the head with different Neta fillings.',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Pumpkin soup',
@@ -108,7 +108,7 @@ const dish =[
         reviews:[],
         dishDescription:'Mushroom cream soup has a rich flavor, mixed with natural freshness, from shiitake mushrooms, fatty from fresh cream. When eating, you will feel the gentle aroma of musk and cilantro, creating an attractive and irresistible flavor. It would be the best when served with a slice of bread!',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Shredded chicken soup',
@@ -136,7 +136,7 @@ const dish =[
         reviews:[],
         dishDescription:'CocaCola original taste.',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Peach tea',
@@ -150,7 +150,7 @@ const dish =[
         reviews:[],
         dishDescription:'When the temperature in Saigon approaches the 40- figure,the chilled peach tea suddenly becomes a lifesaver.',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Vodka',
@@ -164,7 +164,7 @@ const dish =[
         reviews:[],
         dishDescription:'Drinks to help you strengthen your fitness !!',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Pepsi',
@@ -178,7 +178,7 @@ const dish =[
         reviews:[],
         dishDescription:'If you are not an original Coca fan, you already have the original Pepsi.',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Coconut cream',
@@ -206,7 +206,7 @@ const dish =[
         reviews:[],
         dishDescription:'Pudding is a kind of cold cake frozen by gelatin combined with a number of different flavors such as green tea, strawberry, and orange. Pudding with a soft, delicious taste is often used as a dessert or as milk tea topping.',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Flan',
@@ -220,7 +220,7 @@ const dish =[
         reviews:[],
         dishDescription:'Serve cold by chilling in the refrigerator before serving. The cake is poured onto a plate so that the part with the brown sugar on the cake turns up.',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Fried chicken',
@@ -262,7 +262,7 @@ const dish =[
         reviews:[],
         dishDescription:'Cheese seafood pizza is a grilled dish with a harmonious combination between the freshness of seafood and the fatty flavor of cheese to create an irresistible taste.',
         countInStock:5,
-        isBestSeller:true
+        isBestSeller:false
     },
     {
         name:'Potato chips',
