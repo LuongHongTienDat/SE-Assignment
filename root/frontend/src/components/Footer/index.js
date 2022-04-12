@@ -48,16 +48,16 @@ export default function Footer() {
 						<a rel="noopener noreferrer" href="https://www.facebook.com/thin.phiu/" className='font-medidum hover:text-green-500'>Hà Phan Thiên Phú</a>
 					</li>
 					<li>
-						<a rel="noopener noreferrer" href="https://www.facebook.com/thin.phiu/" className='font-medidum hover:text-green-500'>Lương Hồng Tiến Đạt</a>
+						<a rel="noopener noreferrer" href="https://www.facebook.com/tiendatluonghong" className='font-medidum hover:text-green-500'>Lương Hồng Tiến Đạt</a>
 					</li>
 					<li>
-						<a rel="noopener noreferrer" href="https://www.facebook.com/thin.phiu/" className='font-medidum hover:text-green-500'>Hà Trung Kiên</a>
+						<a rel="noopener noreferrer" href="https://www.facebook.com/profile.php?id=100009623600721" className='font-medidum hover:text-green-500'>Hà Trung Kiên</a>
 					</li>
 					<li>
-						<a rel="noopener noreferrer" href="https://www.facebook.com/thin.phiu/" className='font-medidum hover:text-green-500'>Nguyễn Huy Hoàng</a>
+						<a rel="noopener noreferrer" href="https://www.facebook.com/hoang.nguyen030902" className='font-medidum hover:text-green-500'>Nguyễn Huy Hoàng</a>
 					</li>
 					<li>
-						<a rel="noopener noreferrer" href="https://www.facebook.com/thin.phiu/" className='font-medidum hover:text-green-500'>Lý Chánh Tín</a>
+						<a rel="noopener noreferrer" href="https://www.facebook.com/tin.lychanh" className='font-medidum hover:text-green-500'>Lý Chánh Tín</a>
 					</li>
 				</ul>
 			</div>
@@ -83,7 +83,7 @@ export default function Footer() {
 			</div>
 		</div>
 	</div>
-	<div className="py-6 text-sm text-center dark:text-coolGray-400">© 2021 Company Co. All rights reserved.</div>
+	<div className="py-6 text-sm text-center dark:text-coolGray-400">© 2022 Company Co. All rights reserved.</div>
 </footer>
     );
 }
