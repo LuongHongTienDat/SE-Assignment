@@ -36,7 +36,6 @@ export default function Signup () {
         userName:'',
         password: '',
         phoneNumber:'',
-        gender:'',
         email:''
       });
     //text event

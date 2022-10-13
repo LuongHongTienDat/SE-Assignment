@@ -11,7 +11,7 @@ const getCart = async(token) => {
       // make axios post request
       const res = await axios({
         method: "get",
-        url: "https://luna-eatery.herokuapp.com/api/cart",
+        url: "http://localhost:5000/api/cart",
         headers: {authorization:token},
       });
       return res.data;
@@ -32,7 +32,7 @@ const getCart = async(token) => {
       // make axios post request
       const res = await axios({
         method: "patch",
-        url: "https://luna-eatery.herokuapp.com/api/cart/update",
+        url: "http://localhost:5000/api/cart/update",
         data: formValue,
         headers: { authorization:token},
       });
