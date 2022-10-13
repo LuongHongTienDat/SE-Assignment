@@ -27,6 +27,7 @@ import getDish, { getCate } from './api/dishApi';
 import ErrorPage from './components/Pages/404 Page/errorPage';
 import Forgetpass from './components/Pages/Forget Pass/forgetPass';
 import Sendsuccess from './components/Pages/Forget Pass/sendSuccess';
+import EnterNewPass from './components/Pages/EnterNewPass/enterNewPass';
 
 
 
@@ -96,6 +97,8 @@ function App() {
       
       <Route path="/Product/:_id" element={<Product cartItems={cartItems} onAdd={onAdd} foodList= {foodList}/>}/>
       <Route path="/SignUp" element={<Signup/>}/>
+      <Route path="/EnterNewPassword" element={<EnterNewPass/>}/>
+
 
       <Route element={<ProtectRoutesUser/>}> 
         <Route path="/Cart" element={<Cart onRemove={onRemove} />}/>
@@ -121,12 +124,6 @@ function App() {
     
     </Routes>
       </AddContext.Provider>
-
-      
-
-     
-    
-    
 
     </>
   )

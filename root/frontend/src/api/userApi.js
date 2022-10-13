@@ -11,7 +11,7 @@ const register = async(formValue) => {
       // make axios post request
       const res = await axios({
         method: "post",
-        url: "http://localhost:5000/api/user/register",
+        url: "https://luna-eatery.herokuapp.com/api/user/register",
         data: formValue,
         headers: { "Content-Type": "application/json" },
       });
@@ -49,7 +49,7 @@ const register = async(formValue) => {
       // make axios post request
       const res = await axios({
         method: "post",
-        url: "http://localhost:5000/api/user/auth",
+        url: "https://luna-eatery.herokuapp.com/api/user/auth",
         data: formValue,
         headers: { "Content-Type": "application/json" },
       });
@@ -70,7 +70,7 @@ const register = async(formValue) => {
       // make axios post request
       const res = await axios({
         method: "get",
-        url: "http://localhost:5000/api/user",
+        url: "https://luna-eatery.herokuapp.com/api/user",
         headers: {authorization:token },
       });
       return res.data;
@@ -92,7 +92,7 @@ const register = async(formValue) => {
       // make axios post request
       const res = await axios({
         method: "patch",
-        url: "http://localhost:5000/api/user/update",
+        url: "https://luna-eatery.herokuapp.com/api/user/update",
         data: formValue,
         headers: {authorization:token},
       });
