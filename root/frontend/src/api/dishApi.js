@@ -24,7 +24,7 @@ const getDish = async() => {
       // make axios post request
       const res = await axios({
         method: "get",
-        url: "https://luna-eatery.herokuapp.com/api/dish/cate",
+        url: "http://localhost:5000/api/dish/cate",
 
       });
       return res.data;
@@ -39,7 +39,7 @@ const getDish = async() => {
 
     if(id===undefined) return;
 
-    const url = "https://luna-eatery.herokuapp.com/api/dish/"+ id;
+    const url = "http://localhost:5000/api/dish/"+ id;
     try {
       // make axios post request
       const res = await axios({
@@ -61,7 +61,7 @@ const getDish = async() => {
         return;
     }
 
-    const url ="https://luna-eatery.herokuapp.com/api/dish/" + id;
+    const url ="http://localhost:5000/api/dish/" + id;
     try {
       // make axios post request
       const res = await axios({
