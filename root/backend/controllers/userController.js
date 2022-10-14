@@ -139,7 +139,7 @@ class UserController {
                 token: crypto.randomBytes(32).toString("hex"),
             }).save();
         }
-        const link = `${process.env.BASE_URL}/resetpassword/${user._id}/${tokenReset.token}`;
+        const link = `${process.env.BASE_URL}/enternewpassword/${user._id}/${tokenReset.token}`;
         await sendEmail(user.email, "Password reset", link);
         res.status(200);
         res.json({

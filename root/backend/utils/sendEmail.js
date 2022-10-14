@@ -1,4 +1,6 @@
 const nodemailer = require("nodemailer");
+const hbs = require('nodemailer-express-handlebars')
+const path = require('path')
 
 const sendEmail = async (email, subject, text) => {
     try {
@@ -10,11 +12,26 @@ const sendEmail = async (email, subject, text) => {
                 pass: process.env.PASSEMAIL,
             },
         });
+
+        const handlebarOptions = {
+            viewEngine: {
+                partialsDir: path.resolve('./views/'),
+                defaultLayout: false,
+            },
+            viewPath: path.resolve('./views/'),
+        };
+        
+        // use a template file with nodemailer
+        transporter.use('compile', hbs(handlebarOptions))
+
         await transporter.sendMail({
             from: process.env.EMAIL,
             to: email,
             subject: subject,
-            text: text,
+            template: 'email', // the name of the template file i.e email.handlebars
+            context:{
+                link: text, // replace {{name}} with Adebola
+            }
         });
 
         console.log("email sent sucessfully");
